@@ -31,7 +31,7 @@ Dazu zählen die Merkmale Wartbarkeit, Transparenz, Übertragbarkeit sowie Testb
 Damit ein entwickeltes Produkt einen möglichst hohen Gewinn generieren kann, muss das Produkt möglichst oft abgesetzt werden können.
 Dies kann unter anderem durch eine Steigerung der Kundenzufriedenheit erreicht werden.
 Um diese systematisch zu erreichen, entwickelte der japanische Professor Noriaki Kano in den 70er Jahren das Kano-Modell \autocite[vgl.][S. 27]{sauerwein_kano-modell_2000}.
-Kano definierte dafür fünf Kategorien, in welche sich die Merkmale eines Produktes einteilen lassen: 
+Kano definiert dafür fünf Kategorien, in welche sich die Merkmale eines Produktes einteilen lassen: 
 Basismerkmale (Must-be quality elements), Leistungsmerkmale (One-dimensional quality elements), Begeisterungsmerkmale (Attractive quality elements), Unerhebliche-Merkmale (Indifferent quality elements) und Rückweisungsmerkmale (Reverse quality elements) \autocite[vgl.][S. 82-83]{holzing_kano-theorie_2008}.
 
 \begin{figure}
@@ -64,7 +64,19 @@ In Abbildung~\ref{fig:kano-modell} würde diese Klasse der blauen Geraden entspr
 Bei nicht Erfüllung des Merkmals wird somit eine hohe Kundenzufriedenheit hervorgerufen, wohingegen eine Erfüllung des Merkmals die Kundenzufriedenheit negativ beeinflusst.
 \newline
 
-% TODO: Zusammenhang Qualität und Kano-Modell ?
+% TODO: @Henry Zusammenhang Qualität und Kano-Modell ?
 
 \subsection{Requirements Engineering}
-Requirements Engineering (RE) ist ein Teilgebiet der Software-Entwicklung, welches sich mit der Erhebung, Analyse und Spezifikation von Anforderungen an ein Software-Produkt befasst.
+\ac{RE} ist ein Teilgebiet der Software-Entwicklung, welches sich mit der Erhebung, Analyse und Spezifikation von Anforderungen an ein Software-Produkt befasst.
+Diese Anforderungen werden dabei durch die Stakeholder des Software-Produkts definiert.
+Insgesamt lassen sich die Anforderungen in drei Kategorien unterteilen: funktionale Anforderungen, Qualitätsanforderungen und Randbedingungen \autocite[vgl.][S. 3]{pohl_basiswissen_2021}.
+\newparagraph
+Bereits aus den Kategorien der Anforderungen lässt sich der Zusammenhang mit der Softwarequalität ableiten.
+Qualitätsanforderungen sind demnach fester Bestandteil des \ac{RE}, da diese die Systemarchitektur maßgeblich beeinflussen können \autocite[vgl.][S. 3-4]{pohl_basiswissen_2021}.
+\citeauthor{ebert_systematisches_2019} nennt als Folge eines unzureichenden \ac{RE} eine hohe Zufälligkeit der resultierenden Softwarequalität, da die zu erreichenden Ziele nicht klar definiert sind \autocite[vgl.][S. 51]{ebert_systematisches_2019}. 
+
+Das frühe Einbringen der Qualitätsanforderungen bereits im Prozess des \ac{RE} ist dabei essenziell für die resultierenden Qualitätsmerkmale.
+\citeauthor{ebert_systematisches_2019} kommt zu dem Schluss, dass Unternehmen erkannt haben, dass \gqq{Qualität nur dann effektiv und kostengünstig erreichbar ist, wenn sie bereits zu Beginn des Projekts in dessen Zentrum steht - und nicht am Ende \gq{hineingetestet} werden soll} \autocite[S. 66]{ebert_systematisches_2019}.
+Durch dieses Vorgehen wird die Anzahl an Änderungen im späteren Projektverlauf reduziert, da die Anforderungen bereits im \ac{RE} definiert wurden und somit nicht mehr verändert werden müssen.
+
+% TODO: @Henry Eventuell RE noch genauer beschreiben? -> Optional
