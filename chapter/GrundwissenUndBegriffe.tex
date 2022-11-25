@@ -1,0 +1,82 @@
+\section{Grundwissen und Begriffe}
+In diesem Kapitel werden die grundlegenden Begriffe und Konzepte vorgestellt und erläutert.
+Dazu wird zunächst der generische Begriff der Qualität definiert und anschließend gegenüber der Software-Qualität abgegrenzt.
+Weiterhin wird das Kano-Modell vorgestellt und dessen Bedeutung in Zusammenhang mit dem Requirements Engineering in Bezug auf die Software-Qualität erläutert.
+\subsection{Qualität}
+Der Begriff Qualität leitet sich von dem lateinischen Begriff \gqq{qualitas} ab, welcher mit den Begriffen \gqq{Beschaffenheit} oder \gqq{Eigenschaft} übersetzt werden kann \autocite[vgl.][]{noauthor_was_nodate}.
+Die \ac{ISO} beschreibt den Begriff Qualität als \gqq{Grad, in dem ein Satz inhärenter Merkmale eines Objekts Anforderungen erfüllt} \autocite[S. 17]{iso_iso_2015}.
+Die Merkmale, sowie Anforderungen des Objekts werden dabei nicht weiter konkretisiert.
+Es handelt sich also um Aspekte, welche nicht universell definiert werden können.
+Qualität ist somit ein sehr abstrakter Begriff, welcher je nach Kontext unterschiedlich interpretiert werden kann.
+
+Um eine Aussage über die Qualität eines Objekts tätigen und mit anderen Objekten vergleichen zu können, muss Qualität messbar gemacht werden.
+Dafür müssen zunächst die wesentlichen gemeinsamen Merkmale definiert werden.
+In einem weiteren Schritt muss dann eine Art und Weise gefunden werden, wie diese spezifischen Merkmale hinsichtlich ihres Umsetzungsgrades bewertet werden können.
+Die Bewertung kann dabei sowohl subjektiv als auch objektiv erfolgen \autocite[vgl.][S. 53]{shewhart_economic_1931}.
+Das Merkmal Benutzerfreundlichkeit kann beispielsweise durch die Auswertung verschiedener subjektiver Eindrücke von Test-Benutzer bestimmt werden.
+Gleichzeitig kann aber auch eine objektive Bewertung vorgenommen werden, indem beispielsweise Faktoren wie die Anzahl an Funktionen zusammen mit der Komplexität der einzelnen Funktionen des Objekts gemessen werden.
+
+\subsection{Software-Qualität}
+Der Begriff Software-Qualität stellt eine Spezifizierung des Begriffs Qualität dar, indem der Begriff Qualität in den Kontext Software gestellt wird.
+Durch diese Spezifizierung konkretisiert sich auch die Definition des Begriffs (Software-)Qualität, welcher als "Grad, in dem ein Softwareprodukt festgelegte und implizierte Anforderungen erfüllt, wenn es unter bestimmten Bedingungen verwendet wird" \autocite[S. 17]{iso_iso_2011}, definiert werden kann.
+Die wesentlichen Merkmale für die Bewertung der Qualität von Software unterteilen sich dabei in zwei Gruppen -- die externe und die interne Qualitätssicht.
+
+Die externe Qualitätssicht bezieht sich auf Software-Merkmale, welche für die anwendende Person die Qualität der Software beeinflusst.
+Dazu zählen die vier Merkmale Funktionalität, Laufzeit, Zuverlässigkeit und Benutzbarkeit.
+
+Auf der anderen Seite steht die interne Qualitätssicht, welche sich auf Software-Merkmale, welche für die entwickelnde Person relevant sind, bezieht.
+Dazu zählen die Merkmale Wartbarkeit, Transparenz, Übertragbarkeit sowie Testbarkeit \autocite[vgl.][S. 6-10]{hoffmann_software-qualitat_2013}.
+
+\subsection{Kano-Modell}
+Damit ein entwickeltes Produkt einen möglichst hohen Gewinn generieren kann, muss das Produkt möglichst oft abgesetzt werden können.
+Dies kann unter anderem durch eine Steigerung der Kundenzufriedenheit erreicht werden.
+Um diese systematisch zu erreichen, entwickelte der japanische Professor Noriaki Kano in den 70er Jahren das Kano-Modell \autocite[vgl.][S. 27]{sauerwein_kano-modell_2000}.
+Kano definiert dafür fünf Kategorien, in welche sich die Merkmale eines Produktes einteilen lassen: 
+Basismerkmale (Must-be quality elements), Leistungsmerkmale (One-dimensional quality elements), Begeisterungsmerkmale (Attractive quality elements), Unerhebliche-Merkmale (Indifferent quality elements) und Rückweisungsmerkmale (Reverse quality elements) \autocite[vgl.][S. 82-83]{holzing_kano-theorie_2008}.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.8\textwidth, keepaspectratio]{images/kano-modell.png}
+  \caption{Kano-Modell \autocite{diehl_kano_2019}}
+  \label{fig:kano-modell}
+\end{figure}
+Die einzelnen Kategorien unterscheiden sich hinsichtlich ihrer Wirkung auf die Kundenzufriedenheit.
+Abbildung~\ref{fig:kano-modell} zeigt drei der fünf Kategorien des Kano-Modells.
+Die x-Achse definiert dabei den Grad der Erfüllung der Merkmale, wobei die y-Achse den Grad der Kundenzufriedenheit darstellt.
+
+Die rote Kurve in Abbildung~\ref{fig:kano-modell} zeigt die Charakteristik der Basismerkmale.
+Während eine unzureichende Erfüllung des Merkmals eine negativen Kundenzufriedenheit verursacht, führt eine übermäßige Erfüllung des Merkmals nicht zu einer positiven Kundenzufriedenheit, da diese Merkmale als absolutes Minimum (Must-be) angesehen werden.
+
+Im Gegensatz dazu stehen die Leistungsmerkmale, welche durch die blaue Kurve charakterisiert werden.
+Hierbei handelt es sich um einen linearen Zusammenhang zwischen dem Grad der Erfüllung eines Merkmals und der Kundenzufriedenheit.
+Durch Erfüllung dieser Merkmale kann somit im Gegensatz zu den Basismerkmalen die Kundenzufriedenheit gesteigert werden.
+
+Begeisterungsmerkmale stellen das Komplement zu den Basismerkmalen dar und sind in Abbildung~\ref{fig:kano-modell} durch die rosa Kurve dargestellt.
+Dabei handelt es sich um optionale Merkmale, welche die Kundenzufriedenheit ausschließlich steigern können.
+Werden die Merkmale nicht erfüllt, beeinflusst dies die Kundenzufriedenheit somit weder positiv noch negativ.
+
+Neben den drei eingezeichneten Kurven in Abbildung~\ref{fig:kano-modell} wird die Klasse der Unerheblichen-Merkmale durch die x-Achse charakterisiert.
+Diese Merkmale sind für die Kundenzufriedenheit nicht relevant, da sie diese weder positiv noch negativ beeinflussen.
+
+Die letzte Klasse, die Rückweisungsmerkmale, stellen das Komplement zu den Leistungsmerkmalen dar.
+Es besteht somit ebenfalls ein linearer Zusammenhang zwischen dem Grad der Erfüllung eines Merkmals und der Kundenzufriedenheit, jedoch in umgekehrter Richtung.
+In Abbildung~\ref{fig:kano-modell} würde diese Klasse der blauen Geraden entsprechen, welche um 90 Grad im Ursprung gedreht wurde.
+Bei nicht Erfüllung des Merkmals wird somit eine hohe Kundenzufriedenheit hervorgerufen, wohingegen eine Erfüllung des Merkmals die Kundenzufriedenheit negativ beeinflusst.
+\newline
+
+% TODO: @Henry Zusammenhang Qualität und Kano-Modell ?
+
+\subsection{Requirements Engineering}
+\ac{RE} ist ein Teilgebiet der Software-Entwicklung, welches sich mit der Erhebung, Analyse und Spezifikation von Anforderungen an ein Software-Produkt befasst.
+Diese Anforderungen werden dabei durch die Stakeholder des Software-Produkts definiert.
+Insgesamt lassen sich die Anforderungen in drei Kategorien unterteilen: funktionale Anforderungen, Qualitätsanforderungen und Randbedingungen \autocite[vgl.][S. 3]{pohl_basiswissen_2021}.
+\newparagraph
+Bereits aus den Kategorien der Anforderungen lässt sich der Zusammenhang mit der Softwarequalität ableiten.
+Qualitätsanforderungen sind demnach fester Bestandteil des \ac{RE}, da diese die Systemarchitektur maßgeblich beeinflussen können \autocite[vgl.][S. 3-4]{pohl_basiswissen_2021}.
+\citeauthor{ebert_systematisches_2019} nennt als Folge eines unzureichenden \ac{RE} eine hohe Zufälligkeit der resultierenden Softwarequalität, da die zu erreichenden Ziele nicht klar definiert sind \autocite[vgl.][S. 51]{ebert_systematisches_2019}. 
+
+Das frühe Einbringen der Qualitätsanforderungen bereits im Prozess des \ac{RE} ist dabei essenziell für die resultierenden Qualitätsmerkmale.
+\citeauthor{ebert_systematisches_2019} kommt zu dem Schluss, dass Unternehmen erkannt haben, dass \gqq{Qualität nur dann effektiv und kostengünstig erreichbar ist, wenn sie bereits zu Beginn des Projekts in dessen Zentrum steht - und nicht am Ende \gq{hineingetestet} werden soll} \autocite[S. 66]{ebert_systematisches_2019}.
+Durch dieses Vorgehen wird die Anzahl an Änderungen im späteren Projektverlauf reduziert, da die Anforderungen bereits im \ac{RE} definiert wurden und somit nicht mehr verändert werden müssen.
+
+% TODO: @Henry Eventuell RE noch genauer beschreiben? -> Optional
