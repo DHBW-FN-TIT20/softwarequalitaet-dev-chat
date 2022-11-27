@@ -35,15 +35,32 @@ Diese stellt dar, dass später auftretende Änderungen exponentiell höhere Kost
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{images/boehm.png}
-    \customcaption{Abruf MPA Website}{\autocite[][S. 97]{witte_testmanagement_2019}}
+    \customcaption{Kostenkurve Barry Boehm}{\autocite[][S. 97]{witte_testmanagement_2019}}
     \label{fig:boehm}
 \end{figure}\noindent
 % evtl 10er regel / defektvererbung
-Daraus lässt sich schlussfolgern, je früher ein Fehler in Entwicklunngsprozess entdeckt wird, desto geringer sind die Kosten dafür.
-Um dies zu re
+Um Qualitätbezogene Kosten zu Reduzieren muss zunächst die Zusammensetzung dieser dargestellt werden.
+Qualitätskosten setzen sich aus den den drei Bereichen Fehlerkosten, Fehlerverhütungskosten und Prüfkosten zusammen.
+Fehlerkosten sind Kosten, die nach der Auslieferung des Produkts entstehen, wie z.B. Kosten für Reklamationen oder Vertragsstrafen.
+Fehlerverhütungskosten sind Kosten die primär im Bereich des Qualitätsmanagement anfallen.
+Prüfkosten entstehen in der Entwicklung bzw. Produktion, um das Produkt vor der Auslieferung zu Testen.
+Die Fehlerverhütungskosten und Prüfkosten können zusammengefasst werden, das diese während der Entwicklung entstehen, die Fehlerkosten hingegen entstehen nach der Auslieferung des Produkt.
+\newparagraph
+Betrachtet man nun die Fehlerkosten in Relation zu den Fehlerverhütungs- und Prüfkosten lässt sich ein Zusammenhang erkennen.
+Wird während der Entwicklung Wert auf eine hohe Qualität gelegt, also höhere Qualitätskosten im Bereich Fehlerverhütungs- und Prüfkosten, um so weniger Fehlerkosten entstehen, da durch die hohe Qualität mit weniger Beschwerden am ausgelieferten Produkt gerechnet werden kann.
+Dieser Zusammenhang wird in der Abbildung \ref{fig:QKostenVerhaeltnis} dargestellt.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{images/qkostenverhaeltnis.png}
+    \caption{Qualitätskosten Verhältnis}
+    \label{fig:QKostenVerhaeltnis}
+\end{figure}\noindent
 % Wie Qualitätskosten in der Entwicklung senken?
 % - S.28
 % Warum nicht komplette Fehlerfreiheit?
+Um die Qualitätskosten in Summe zu Reduzieren muss das perfekte Mittel zwischen den Fehlerverhütungs- und Prüfkosten und den Fehlerkosten gefunden werden.
+Unter Berücksichtigung dieses Zusammenhangs wird ebenfalls klar, dass eine vollständige Fehlerfreiheit aus Kostensicht nicht sinnvoll ist.
+Der Aufwand im Bereich der Fehlerverhütungskosten und Prüfkosten wächst exponentiell im Verhältnis zur Qualität während sich die Fehlerkosten nur langsam der Nulllinie annähert. 
 
 % Methoden aus der Vorlesung um Entwicklungskosten zu senken
 % Barry Boehm / defektvererbung
