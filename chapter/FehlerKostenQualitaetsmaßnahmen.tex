@@ -24,22 +24,6 @@ Abschließend wird für das Produkt eine \ac{FMEA} durchgeführt.
 
 
 \subsection{Qualitätskostensenkung und Fehlertoleranz}
-% %Stellen Sie dar, wie sie die Q-Kosten in der Entwicklung des Produktes senken können? Warum ist es nicht sinnvoll komplette Fehlerfreiheit anzustreben und nennen Sie Methoden und Modelle aus der Vorlesung, die zum Einsatz kommen könnten?
-% Grundsätzlich wird Software in den klassischen Vorgehensmodellen innerhalb eines Projekts in den sechs Phasen Analyse, Entwurf, Implementierung, Test, Inbetriebnahme und Wartung entwickelt.
-% Bei agilen Prozessmodellen werden diese Phasen wiederholt durchlaufen, während im Wasserfallmodel oder V-Modell diese Phasen im Idealfall nur einmal durchlaufen werden.
-% Das Ziel ist, dass bereits in der Analyse alle Anforderungen an die zu entwickelde Software identifizert werden.
-% Änderungen die nach dem Entwurf der Software entstehen können meist nur mit hohem Kostenaufwand berücksichtigt werden.
-% Daraus ergibt sich die auf Barry Boehm zurückgehende Kostenkurve die in Abb. \ref{fig:boehm} dargestellt wird.
-% Diese stellt dar, dass später auftretende Änderungen exponentiell höhere Kosten verursachen.
-% \autocite[vgl.][S. 95]{witte_testmanagement_2019}
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=0.8\textwidth]{images/boehm.png}
-%     \customcaption{Kostenkurve Barry Boehm}{\autocite[][S. 97]{witte_testmanagement_2019}}
-%     \label{fig:boehm}
-% \end{figure}\noindent
-% evtl 10er regel / defektvererbung
-%----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Um Qualitätsbezogene Kosten zu reduzieren muss zunächst die Zusammensetzung dieser dargestellt werden.
 Qualitätskosten setzen sich aus den den drei Bereichen Fehlerkosten, Fehlerverhütungskosten und Prüfkosten zusammen.
 Fehlerkosten sind Kosten, die nach der Auslieferung des Produkts entstehen, wie z.B. Kosten für Reklamationen oder Vertragsstrafen.
@@ -64,7 +48,6 @@ Unter Berücksichtigung dieses Zusammenhangs wird ebenfalls klar, dass eine voll
 Der Aufwand im Bereich der Fehlerverhütungskosten und Prüfkosten wächst exponentiell im Verhältnis zur Qualität während sich die Fehlerkosten nur langsam der Nulllinie annähern.
 \newparagraph
 Die Reduzierung der Qualitätskosten teilt sich in die zwei Bereiche Prozessverbesserung und Produktverbesserung.
-%//TODO Inserts Barry Boehm here
 Bei der Prozessverbesserung wird der Entwicklungsprozess optimiert.
 Die Kostendynamik in einem Entwicklungsprozess wird in der auf Barry Boehm zurückgehenden Kostenkurve beschrieben.
 Diese ist in Abbildung \ref{fig:boehm} dargestellt.
@@ -114,26 +97,17 @@ Sollte eine Weiterentwicklung bzw. eine Veröffentlichung erfolgen, sollten die 
     \item vollständige Umsetzung von Websockets, mit Fallback (zyklische Abfragen)
 \end{itemize}
 
-% Hierbei können beispielsweise die Methoden CMMI und PDCA angewandt werden.
-% Bei der Produktverbesserung wird die Qualität des zu entwickelden Produkts verbessert.
-% Hierzu kann zum Beispiel eine Pareto Analyse oder die Six Sigma Methode verwendet werden.
-
-%BEZUG ZU DEN GRAFIKEN OBEN
-
-% Die Kostenoptimierung besteht aus 3 Teilen.
-%   Erfassung q-Kosten
-%   Prozessverbesserung --> Verbesserung d. Entwicklungsprozesses
-%   Produktverbesserung --> Verbesserung d. tatsächlichen Produkts
-% Reduzierung durch PDCA / Six Sigma / CMMI Dev
-
-% PDCA / CMMI-DEV --> Prozessoptimierung
-% 
-
-
-
 \subsection{\acl{FMEA}}
-
 % Failure Mode and Effects Analysis (FMEA) (realistische Annahme für Risikoprioritätszahl RPZ
+Im folgenden wird für den DEV-CHAT eine \ac{FMEA} durchgeführt.
+\gqq{
+    Ziel der FMEA ist es, bei der Entwicklung eines Produktes bzw. der Bearbeitung einer Aufgabe mögliche Fehler frühzeitig zu erkennen, um die Funktion sowie die Sicherheit und eine hohe Produkt- bzw. Prozessqualität gewährleisten zu können.
+    Durch die frühzeitige Erkennung können sowohl die Anlaufkosten und die entstehenden Kosten infolge von Rückrufaktionen und Reklamationen reduziert werden als auch die Entwicklungszeit verkürzt werden.
+} \autocite[][]{noauthor_fmea_nodate}
+\newparagraph
+Die \ac{FMEA} lässt sich grob in zwei Schritte aufteilen, in die Ermittlung der Funktionen und die Analyse dieser und die darausfolgende Aufdeckung von Schwachstellen und den Vorschlag möglicher Lösungen.
+Die Ermittlung der Funktionen kann in einem Strukurdiagramm dargestellt werden.
+Die Analyse erfolgt in einer Tabelle. 
 
 
 
