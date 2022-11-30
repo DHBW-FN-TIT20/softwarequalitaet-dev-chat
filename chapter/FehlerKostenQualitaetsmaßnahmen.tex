@@ -24,23 +24,23 @@ Abschließend wird für das Produkt eine \ac{FMEA} durchgeführt.
 
 
 \subsection{Qualitätskostensenkung und Fehlertoleranz}
-%Stellen Sie dar, wie sie die Q-Kosten in der Entwicklung des Produktes senken können? Warum ist es nicht sinnvoll komplette Fehlerfreiheit anzustreben und nennen Sie Methoden und Modelle aus der Vorlesung, die zum Einsatz kommen könnten?
-Grundsätzlich wird Software in den klassischen Vorgehensmodellen innerhalb eines Projekts in den sechs Phasen Analyse, Entwurf, Implementierung, Test, Inbetriebnahme und Wartung entwickelt.
-Bei agilen Prozessmodellen werden diese Phasen wiederholt durchlaufen, während im Wasserfallmodel oder V-Modell diese Phasen im Idealfall nur einmal durchlaufen werden.
-Das Ziel ist, dass bereits in der Analyse alle Anforderungen an die zu entwickelde Software identifizert werden.
-Änderungen die nach dem Entwurf der Software entstehen können meist nur mit hohem Kostenaufwand berücksichtigt werden.
-Daraus ergibt sich die auf Barry Boehm zurückgehende Kostenkurve die in Abb. \ref{fig:boehm} dargestellt wird.
-Diese stellt dar, dass später auftretende Änderungen exponentiell höhere Kosten verursachen.
-\autocite[vgl.][S. 95]{witte_testmanagement_2019}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{images/boehm.png}
-    \customcaption{Kostenkurve Barry Boehm}{\autocite[][S. 97]{witte_testmanagement_2019}}
-    \label{fig:boehm}
-\end{figure}\noindent
+% %Stellen Sie dar, wie sie die Q-Kosten in der Entwicklung des Produktes senken können? Warum ist es nicht sinnvoll komplette Fehlerfreiheit anzustreben und nennen Sie Methoden und Modelle aus der Vorlesung, die zum Einsatz kommen könnten?
+% Grundsätzlich wird Software in den klassischen Vorgehensmodellen innerhalb eines Projekts in den sechs Phasen Analyse, Entwurf, Implementierung, Test, Inbetriebnahme und Wartung entwickelt.
+% Bei agilen Prozessmodellen werden diese Phasen wiederholt durchlaufen, während im Wasserfallmodel oder V-Modell diese Phasen im Idealfall nur einmal durchlaufen werden.
+% Das Ziel ist, dass bereits in der Analyse alle Anforderungen an die zu entwickelde Software identifizert werden.
+% Änderungen die nach dem Entwurf der Software entstehen können meist nur mit hohem Kostenaufwand berücksichtigt werden.
+% Daraus ergibt sich die auf Barry Boehm zurückgehende Kostenkurve die in Abb. \ref{fig:boehm} dargestellt wird.
+% Diese stellt dar, dass später auftretende Änderungen exponentiell höhere Kosten verursachen.
+% \autocite[vgl.][S. 95]{witte_testmanagement_2019}
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.8\textwidth]{images/boehm.png}
+%     \customcaption{Kostenkurve Barry Boehm}{\autocite[][S. 97]{witte_testmanagement_2019}}
+%     \label{fig:boehm}
+% \end{figure}\noindent
 % evtl 10er regel / defektvererbung
 %----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Um Qualitätsbezogene Kosten zu Reduzieren muss zunächst die Zusammensetzung dieser dargestellt werden.
+Um Qualitätsbezogene Kosten zu reduzieren muss zunächst die Zusammensetzung dieser dargestellt werden.
 Qualitätskosten setzen sich aus den den drei Bereichen Fehlerkosten, Fehlerverhütungskosten und Prüfkosten zusammen.
 Fehlerkosten sind Kosten, die nach der Auslieferung des Produkts entstehen, wie z.B. Kosten für Reklamationen oder Vertragsstrafen.
 Fehlerverhütungskosten sind Kosten die primär im Bereich des Qualitätsmanagement anfallen.
@@ -59,16 +59,56 @@ Dieser Zusammenhang wird in der Abbildung \ref{fig:QKostenVerhaeltnis} dargestel
 % Wie Qualitätskosten in der Entwicklung senken?
 % - S.28
 % Warum nicht komplette Fehlerfreiheit?
-Um die Qualitätskosten in Summe zu Reduzieren muss das perfekte Mittel zwischen den Fehlerverhütungs- und Prüfkosten und den Fehlerkosten gefunden werden.
+Um die Qualitätskosten in Summe zu reduzieren, muss das perfekte Mittel zwischen den Fehlerverhütungs- und Prüfkosten und den Fehlerkosten gefunden werden.
 Unter Berücksichtigung dieses Zusammenhangs wird ebenfalls klar, dass eine vollständige Fehlerfreiheit aus Kostensicht nicht sinnvoll ist.
 Der Aufwand im Bereich der Fehlerverhütungskosten und Prüfkosten wächst exponentiell im Verhältnis zur Qualität während sich die Fehlerkosten nur langsam der Nulllinie annähern.
 \newparagraph
 Die Reduzierung der Qualitätskosten teilt sich in die zwei Bereiche Prozessverbesserung und Produktverbesserung.
 %//TODO Inserts Barry Boehm here
-Bei der Prozessverbesserung wird der Entwicklungsprozess optimiert, diese geschieht im Rahmen eines \ac{KVP}. 
-Hierbei können beispielsweise die Methoden CMMI und PDCA angewandt werden.
-Bei der Produktverbesserung wird die Qualität des zu entwickelden Produkts verbessert.
-Hierzu kann zum Beispiel eine Pareto Analyse oder die Six Sigma Methode verwendet werden.
+Bei der Prozessverbesserung wird der Entwicklungsprozess optimiert.
+Die Kostendynamik in einem Entwicklungsprozess wird in der auf Barry Boehm zurückgehenden Kostenkurve beschrieben.
+Diese ist in Abbildung \ref{fig:boehm} dargestellt.
+Die Kostendynamik bei einem Entwicklungsprozess verhält sicht exponentiell.
+Software wird in den klassischen Vorgehensmodellen innerhalb eines Projekts in den sechs Phasen Analyse, Entwurf, Implementierung, Test, Inbetriebnahme und Wartung entwickelt.
+Das Ziel ist, dass bereits in der Analyse alle Anforderungen an die zu entwickelde Software identifizert werden.
+Änderungen die nach dem Entwurf der Software entstehen können meist nur mit hohem Kostenaufwand berücksichtigt werden.
+\autocite[vgl.][S. 95]{witte_testmanagement_2019}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/boehm.png}
+    \customcaption{Kostenkurve Barry Boehm}{\autocite[][S. 97]{witte_testmanagement_2019}}
+    \label{fig:boehm}
+\end{figure}\noindent
+Die Verbesserung des Entwicklungsprozesses erfolgt im Rahmen eines \ac{KVP}.
+Hierbei kann die PDCA Methode verwendet, diese setzt sich aus den Phasen \textbf{P}lan, \textbf{D}o, \textbf{A}ct und \textbf{C}heck zusammen.
+Diese werden nachfolgend beschrieben.
+\begin{quote}
+    \textbf{Plan}: Analyse der aktuellen Situation und gewünschten Situation, Identifikation der Verbesserungspotentiale, Maßnahmen entwickeln zur Erreichung des Zielzustands.\\
+    \textbf{Do}: Durchführug der geplanten Maßnahmen.\\
+    \textbf{Check}: Vergleich Sollzustand und Istzustand.\\
+    \textbf{Act}: Abhängig ob die Maßnahmen erfolgreich sind werden diese als Standard definiert oder der Prozess wird erneut durchlaufen.
+\end{quote}
+Da DEV-CHAT einmalig in der Vorlesung Software Engineering entwickelt wurde, wird es einen weiteren Entwicklungsprozess mit dieser Teamkonstellation nicht geben, weshalb eine Prozessoptimierung nur theoretisch durchgeführt werden kann.
+Die Probleme und die zugeordneten Maßnahmen der Plan Phase werden in der Tabelle \ref{tab:pdca} dargestellt.
+\begin{table}[H]
+    \begin{tabular}{l|l|l}
+    Problem                                        &Beispiel                                                                         & Maßnahme                                                               \\ \hline
+    nicht korrekte Verwendung von Scrum            & Scrum Master und Product Owner gleichzeitig Developer                            & Schulung zu Scrum                                                      \\\hline
+    Architektur unklar bei Implementierung         & Änderungen an der grundlegenden Softwarearchitektur während der Implementierung  & vollständige Entwicklung der Architektur vor Begin der Implementierung \\\hline
+    mangelndes Wissen über verwendete Technologien & Erstes Projekt mit React.js und Next.js, deshalb nicht voller Umfang ausgenutzt. & Einführung in Technologien, ggf. externe Schulung                      \\\hline
+    mangelhafte Verwendung von Bibliotheken        & eigenständige Programmierung von Authentifizierung, FrontEnd Komponenten         & Umfassende Analyse von Bibliotheken zu Funktionen (Npm-Paketmanager)  
+    \end{tabular}
+    \caption{Übersicht Probleme und Maßnahmen}
+    \label{tab:pdca}
+\end{table}\noindent
+Alternativ zu der PDCA Analyse kann auch ein \ac{CMMI} verwendet werden.
+\newparagraph
+Bei der Produktverbesserung wird die Qualität des tatsächlichen Produkt verbessert.
+
+
+% Hierbei können beispielsweise die Methoden CMMI und PDCA angewandt werden.
+% Bei der Produktverbesserung wird die Qualität des zu entwickelden Produkts verbessert.
+% Hierzu kann zum Beispiel eine Pareto Analyse oder die Six Sigma Methode verwendet werden.
 
 %BEZUG ZU DEN GRAFIKEN OBEN
 
