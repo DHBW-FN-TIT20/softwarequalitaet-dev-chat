@@ -19,7 +19,44 @@ Abschließend wird für das Produkt eine \ac{FMEA} durchgeführt.
         % Fehlerschwere (1-5) (Prio auch noch mit rein?)
         % Priorität
         % potentielle Fehlerkosten
-
+Im folgenden Abschnitt werden die typischen Faults und Defects des DEV-CHAT's dargestellt.
+Zusätzlich werden die Fehlerschwere, Priorität und potentielle Fehlerkosten identifizert und dargestellt.
+Dies ist in der Tabelle \ref{tab:FaultsAndDeffects} dargestellt.
+Die Fehlerschwere wird aus Nutzersicht beschrieben und teilt sich in fünf Kategorien die in der nachfolgenden Auflistung definiert werden.
+\begin{enumerate}
+    \item Systemabsturz mit ggf. Datenverlust
+    \item Wesentliche Funktion fehlerhaft
+    \item Funktionale Einschränkung / Abweichung
+    \item Geringfügige Abweichung
+    \item Schönheitsfehler
+\end{enumerate}
+Die Priorität beschreibt die Dringlichkeit der Behebung aus Projektsicht.
+Diese wird in drei Kategorien aufgeteilt und ebenfalls in der nachfolgenden Auflistung definiert.
+\begin{enumerate}
+    \item Unmittelbar zu beheben
+    \item Fehlerbehebung in nächster regulärer Version
+    \item Fehlerbehebung erfolgt bei nächster Überarbeitung
+\end{enumerate}
+\begin{table}[H]
+    \begin{tabular}{l|l|l|l}
+        Beschreibung                                          & Fehlerschwere & Priorität & Fehlerkosten \\ \hline
+        Login nicht möglich                                   & 2             & 1         & mittel       \\ \hline
+        Netzwerkverbindung bricht ab                          & 2             & 3         & hoch         \\ \hline
+        Registrierung nicht möglich                           & 2             & 1         & mittel       \\ \hline
+        Fehlerhafte Darstellung auf kleinen Displays          & 5             & 2         & gering       \\ \hline
+        Beitreten eines Chatraums nicht möglich               & 3             & 1         & mittel       \\ \hline
+        Benutzerrechte werden nicht korrekt interpretiert     & 3             & 1         & mittel       \\ \hline
+        Passwortwechsel nicht möglich                         & 3             & 2         & gering       \\ \hline
+        Chatnachricht kann nicht empfangen / versendet werden & 2             & 1         & hoch         \\ \hline
+        Kurzbefehl wird nicht richtig ausgeführt              & 3             & 3         & gering       \\ \hline
+        Webseite ist nicht erreichbar                         & 2             & 1         & hoch         \\ \hline
+        Nachrichten-Latenz ist zu hoch                        & 4             & 2         & mittel       \\ \hline
+        System ist überlastet                                 & 3             & 2         & hoch         \\ \hline
+        System stürzt ab                                      & 1             & 3         & hoch        
+    \end{tabular}
+    \caption{typische Faults and Defects}
+    \label{tab:FaultsAndDeffects}
+\end{table}
 
 
 
@@ -107,8 +144,11 @@ Im folgenden wird für den DEV-CHAT eine \ac{FMEA} durchgeführt.
 \newparagraph
 Die \ac{FMEA} lässt sich grob in zwei Schritte aufteilen, in die Ermittlung der Funktionen und die Analyse dieser und die darausfolgende Aufdeckung von Schwachstellen und den Vorschlag möglicher Lösungen.
 Die Ermittlung der Funktionen kann in einem Strukurdiagramm dargestellt werden.
-Die Analyse erfolgt in einer Tabelle. 
-
+Dies wurde bereits in der Abbildung dargestellt.
+% //TODO label zu Strukurdiagramm von PP
+Die Analyse erfolgt in einer Tabelle. Diese ist in der Abbildung \ref{fig:FMEA} abgebildet.
+\includepdf[pages=1, pagecommand=\label{fig:FMEA}, scale=0.8, angle=90, offset=0 0]{images/fmea_export.pdf}
+\includepdf[pages=2, scale=0.8, angle=90, offset=0 0]{images/fmea_export.pdf}
 
 
 
