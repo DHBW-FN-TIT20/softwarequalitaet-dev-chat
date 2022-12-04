@@ -44,6 +44,8 @@
 \usepackage[addtotoc]{abstract}                                                       % Abstract
 \usepackage[nohyperlinks, printonlyused, withpage]{acronym}                           % Abkürzungen
 \usepackage{dirtree}                                                                  % Ordnerstruktur (z.B. für Anhang)
+\usepackage{float}
+\usepackage{pdfpages}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%                      Angaben zur Arbeit                      %%%
@@ -92,7 +94,8 @@
 \newcommand{\textKlasse}[1]{\texttt{#1}}
 \newcommand{\textFunktion}[1]{\texttt{#1}}
 \newcommand{\newparagraph}{\newline \newline}
-
+% Quellenangabe bei Bildern
+\newcommand{\customcaption}[2]{\caption[#1]{ #1. #2.}}
 
 %%%%%%%%%%%%%%%%%%%% Zitatbibliothek einbinden %%%%%%%%%%%%%%%%%%%%%
 \addbibresource{./literatur/literatur.bib}
@@ -165,9 +168,11 @@
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   %%%%                   EIGENE KAPITEL EINFÜGEN                  %%%%
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \include{chapter/Einleitung}
   \include{chapter/GrundwissenUndBegriffe}
   \include{chapter/AnforderungenUndNutzererwartungen}
   \include{chapter/Aufg-3.tex}
+  \include{chapter/FehlerKostenQualitaetsmaßnahmen.tex}
 
   %%%%%%%%%%%%%%%%%%%%%%% Literaturverzeichnis %%%%%%%%%%%%%%%%%%%%%%%
   \include{pages/literaturverzeichnis}
