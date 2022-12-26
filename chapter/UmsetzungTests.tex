@@ -1,13 +1,48 @@
 \section{Umsetzung und Tests}
-In diesem Kapitel wird auf die Umsetzung und Tests eingegangen.
-Hierzu wird zunächst eine Aufwandsschätzung für die Umsetzung einer Neu-Entwicklung durchgeführt.
+In diesem Kapitel wird auf die Umsetzung und Teststrategie eines Software Produkts eingegangen.
+Hierzu wird zunächst eine Aufwandsschätzung für die Umsetzung einer Neuentwicklung des \gqq{DEV-CHAT} durchgeführt.
 In einem weiteren Schritt wird ein risikobasierter Testplan erstellt und eine Teststrategie entwickelt.
 Abschließend werden exemplarisch zwei Testfälle ausformuliert und durchgeführt.
 
-\subsection{Aufwandsschätzung Neu-Entwicklung}
+\subsection{Aufwandsschätzung einer Neuentwicklung}
+Da es sich bei einem Software Produkt nicht um ein herkömmliches materielles Produkt handelt, gestaltet sich die Aufwandsschätzung für die Umsetzung eines Software Produkts schwierig.
+Besonders der Entwicklungsfortschritt und der Grad der Fertigstellung lassen sich nur schwer messen.
+Aus diesem Grund wurden verschiedene Modelle entwickelt, die eine Aufwandsschätzung ermöglichen.
+Im Rahmen dieser Arbeit werden das \ac{COCOMO}, der Netzplan und die \ac{FPA} genauer betrachtet.
+
+\subsubsection{Constructive Cost Model}
 % COCOMO
-% FPA
+% 8 KDSI -> PM = 2,4 * KDSI^1,05 -> 2,4 * 8^1,05 = 21,3
+% TDEV = 2,5 * PM^0,38 -> 2,5 * 16,8^0,38 = 8
+% Personalbedarf: 21,3 / 8 = 2,7
+Das \ac{COCOMO} bewertet den Aufwand einer Software anhand der Anzahl der benötigten Programmzeilen.
+Im Gegensatz zu dem Entwicklungsaufwand selbst, lassen sich die benötigten Programmzeilen leicht abschätzen.
+Trotzdem birgt das Verfahren einige Schwächen.
+So ist die Abschätzung der benötigten Programmzeilen mit einem hohen Aufwand verbunden und erfordert bereits zu Beginn des Projekts eine technologiespezifische Expertise.
+Außerdem werden agile Entwicklungsprozesse nicht berücksichtigt, weshalb sich \ac{COCOMO} besonders in Kombination mit dem Wasserfallmodell anbietet.
+
+\noindent{}Um das \ac{COCOMO} durchführen zu können, muss zunächst die Komplexität des Produkts bestimmt werden.
+Diese ergibt sich, wie bereits erwähnt, durch die Anzahl der benötigten Programmzeilen, welche in der Einheit \ac{KDSI} angegeben werden.
+Da es sich hier um eine Neuentwicklung handelt, wird die Komplexität der Neuentwicklung in etwa der Komplexität des \gqq{DEV-CHAT} (8~\ac{KDSI}) entsprechen.
+Folglich ist das Produkt in die kleinste Komplexitätsstufe, den sogenannten \gqq{Organic Mode}, einzuordnen.
+
+\begin{equation}
+  \begin{split}
+    \text{\acs{PM}} &= 2,4 \cdot \text{\acs{KDSI}}^{1,05} \\
+    \text{\acs{TDEV}} &= 2,5 \cdot \text{\acs{PM}}^{0,38}
+  \end{split}
+  \label{eq:cocomo}
+\end{equation}
+\noindent{}Aus diesen Informationen lässt sich nun der Aufwand, gemessen in \ac{PM} ($1~\ac{PM} \equiv$ 19 Arbeitstage zu je 8 Stunden), sowie die \ac{TDEV} berechnen.
+Dazu werden die Formeln aus \eqref{eq:cocomo} verwendet.
+Es ergibt sich ein Aufwand von ca. 21,3~\ac{PM}.
+Daraus resultiert eine \ac{TDEV} von ca. 8 Monaten mit einem Personalbedarf von $\frac{21,3}{8} = 2,7$ Personen.
+
+\subsubsection{Netzplan}
 % Netzplan
+
+\subsubsection{Function Point Analyse}
+% FPA
 
 \subsection{Testplan und Teststrategie}
 
