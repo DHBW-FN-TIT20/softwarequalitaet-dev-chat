@@ -325,14 +325,12 @@ Bei der Entwicklung einer neuen Anwendung, wird somit erwartet, dass diese Eleme
 
 \subsubsection{Aktuelle Erwartungen}
 Aktuelle Erwartungen sind bewusste Erfahrung, welche mit der aktuellen Situation verbunden sind.
-Nutzer sind bewusst auf einer Website und verfolgen ein bestimmtes, bekanntes Ziel.
-%//TODO @Phillipp: Seitenzahl einfügen + gegebenenfalls genauer Formulieren was unter Aktuelle Erwartungen zu verstehen ist.
-Wird eine dieser Erwartungen nicht erfüllt, ist die natürliche Nutzerreaktion das Verlassen der Applikation \autocite[vgl.][S. ]{noauthor_user_nodate}.
+Nutzer sind bewusst auf einer Website und verfolgen ein bestimmtes, bekanntes Ziel. Gibt es einen Bruch in der Erwartung, wird die Nutzerreaktion negativ sein. 
+Wird eine dieser Erwartungen nicht erfüllt, ist die natürliche Nutzerreaktion das Verlassen der Applikation \autocite{noauthor_user_nodate}.
 
 \subsection{Akzeptanzkriterien}
 Akzeptanzkriterien beschreiben, wann eine bestimmte Anforderung in einem Entwicklungsteam als abgeschlossen gelten kann.
-%//TODO @Phillipp: Seitenzahl einfügen
-Hierbei ist zu beachten, dass diese objektiv und eindeutig zu überprüfen sind, damit alle Erwartungen wie gewollt umgesetzt worden sind \autocite[vgl.][S. ]{noauthor_akzeptanzkriterien_nodate}.
+Hierbei ist zu beachten, dass diese objektiv und eindeutig zu überprüfen sind, damit alle Erwartungen wie gewollt umgesetzt worden sind \autocite{noauthor_akzeptanzkriterien_nodate}.
 
 \subsection{Technisch wenig versierter Nutzer}
 % verfügt nicht über nötige Kenntnisse zur intuitiven Nutzung der Applikation
@@ -354,18 +352,18 @@ Auch Anforderungen an die Geschwindigkeit der Applikation sind für den Nutzer n
 \noindent{}Aus diesen Gründen ergeben sich die folgenden Nutzererwartungen und Akzeptanzkriterien.
 
 \subsubsection{Nutzererwartungen}
-% TODO: @Phillipp: Nutzererwartungen und Akzeptanzkriterien erarbeiten/erweitern + evtl. Nutzererwartungen den Kategorien zuordnen
 % Anleitung/Tutorial/Erklärung
 % Chatapplikation ohne großartige Zusatzfunktionen
 \begin{itemize}
-  \item Die Applikation ist möglichst ähnlich zu bekannten Chat Applikationen aufgebaut
-  \item Die Applikation bietet ausschließlich die Chat Funktion
-  \item Es gibt eine detaillierte/geführte Anleitung zur Nutzung der Applikation
+  \item Die Applikation ist möglichst ähnlich zu bekannten Chat Applikationen aufgebaut (Prägende Erwartungen)
+  \item Die Applikation bietet ausschließlich die Chat Funktion (Aktuelle Erwartungen)
+  \item Es gibt eine detaillierte/geführte Anleitung zur Nutzung der Applikation (Verborgene Erwartungen)
 \end{itemize}
 
 \subsubsection{Akzeptanzkriterien}
 \begin{itemize}
   \item Es existiert eine (unkomplizierte) Anleitung für das entwickelte Feature
+  \item Es ist möglich, einen Chatraum zu betreten und mit anderen Nutzern zu chatten
 \end{itemize}
 
 \subsection{Technisch versierter Nutzer}
@@ -386,21 +384,24 @@ Erhält er ungewollt die Rolle \gqq{Admin} kann der technisch versierte Nutzer e
 Durch sein erweitertes Wissen über den Umgang mit der Applikation kann er gezielt Schaden anrichten, weshalb eine ungewollte Vergabe der Rolle ebenfalls zu vermeiden ist.
 
 \subsubsection{Nutzererwartungen}
-% TODO: @Phillipp: Nutzererwartungen und Akzeptanzkriterien erarbeiten/erweitern + evtl. Nutzererwartungen den Kategorien zuordnen
 \begin{itemize}
-  \item Aufbau und Features sind ähnlich zu bekannten Chat Applikationen
-  \item Durch den Konsolen-Style gibt es Befehle, die verwendet werden können
-  \item Die Eingabe und Verarbeitung von Daten erfolgt ohne große Verzögerung
-  \item Es gibt eine Administrator Rolle welche befugt ist, die Funktionen der Applikation zu verwalten
+  \item Aufbau und Features sind ähnlich zu bekannten Chat Applikationen (Prägende Erwartungen)
+  \item Durch den Konsolen-Style gibt es Befehle, die verwendet werden können (Prägende Erwartungen)
+  \item Die Eingabe und Verarbeitung von Daten erfolgt ohne große Verzögerung (Verborgene Erwartungen)
+  \item Es gibt eine Administrator Rolle welche befugt ist, die Funktionen der Applikation zu verwalten (Verborgene Erwartungen)
+  \item Die Chat Nachrichten werden mit Ende zu Ende Verschlüsselung übertragen (Verborgene Erwartungen)
+  \item Das Design der Applikation soll einem technischen versierten Nutzer bekannt vorkommen (Aktuelle Erwartungen)
 \end{itemize}
 
 \subsubsection{Akzeptanzkriterien}
 \begin{itemize}
-  \item 
+  \item Es existiert eine Anleitung für das entwickelte Feature
+  \item Die Web-Applikation weist keine Performance Probleme auf
+  \item Das Benutzer Passwort wird verschlüsselt gespeichert
 \end{itemize}
 
 \subsection{Spezifizieren einer Anforderungen in \gqq{halbformaler} Beschreibung}
-\begin{table}
+\begin{table}[h!]
   \centering
   \resizebox{\columnwidth}{!}{%
   \begin{tabular}{l|l}
