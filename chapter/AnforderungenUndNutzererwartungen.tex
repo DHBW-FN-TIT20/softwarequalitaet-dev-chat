@@ -325,8 +325,9 @@ Bei der Entwicklung einer neuen Anwendung, wird somit erwartet, dass diese Eleme
 
 \subsubsection{Aktuelle Erwartungen}
 Aktuelle Erwartungen sind bewusste Erfahrung, welche mit der aktuellen Situation verbunden sind.
-Nutzer sind bewusst auf einer Website und verfolgen ein bestimmtes, bekanntes Ziel. Gibt es einen Bruch in der Erwartung, wird die Nutzerreaktion negativ sein. 
-Wird eine dieser Erwartungen nicht erfüllt, ist die natürliche Nutzerreaktion das Verlassen der Applikation \autocite{noauthor_user_nodate}.
+Nutzer sind bewusst auf einer Website und verfolgen ein bestimmtes, bekanntes Ziel. 
+Gibt es einen Bruch in der Erwartung, wird die Nutzerreaktion negativ sein. 
+Die natürliche Nutzerreaktion ist das Verlassen der Applikation \autocite{noauthor_user_nodate}.
 
 \subsection{Akzeptanzkriterien}
 Akzeptanzkriterien beschreiben, wann eine bestimmte Anforderung in einem Entwicklungsteam als abgeschlossen gelten kann.
@@ -390,7 +391,7 @@ Durch sein erweitertes Wissen über den Umgang mit der Applikation kann er gezie
   \item Die Eingabe und Verarbeitung von Daten erfolgt ohne große Verzögerung (Verborgene Erwartungen)
   \item Es gibt eine Administrator Rolle welche befugt ist, die Funktionen der Applikation zu verwalten (Verborgene Erwartungen)
   \item Die Chat Nachrichten werden mit Ende zu Ende Verschlüsselung übertragen (Verborgene Erwartungen)
-  \item Das Design der Applikation soll einem technischen versierten Nutzer bekannt vorkommen (Aktuelle Erwartungen)
+  \item Das Design der Applikation soll einem technisch versierten Nutzer bekannt vorkommen (Aktuelle Erwartungen)
 \end{itemize}
 
 \subsubsection{Akzeptanzkriterien}
@@ -404,7 +405,8 @@ Durch sein erweitertes Wissen über den Umgang mit der Applikation kann er gezie
 \begin{table}[h!]
   \centering
   \resizebox{\columnwidth}{!}{%
-  \begin{tabular}{l|l}
+  \begin{tabular}{|l|l|}
+  \hline
   Beschreibung  & Anforderung                                          \\ \hline
   Funktion      & Benutzer registrieren                                \\ \hline
   Beschreibung  & Einen neuen Benutzer für den \gqq{DEV-CHAT} registrieren \\ \hline
@@ -418,6 +420,7 @@ Durch sein erweitertes Wissen über den Umgang mit der Applikation kann er gezie
   Nachbedingung & Benutzer wird nach der Erstellung direkt eingeloggt  \\ \hline
   Einschränkung &
     \begin{tabular}[c]{@{}l@{}}Benutzername entspricht nicht den Richtlinien\\ Passwort entspricht nicht den Richtlinien\\ Confirm Passwort stimmt nicht mit dem Passwort überein\end{tabular}
+  \\ \hline
   \end{tabular}%
   }
   \caption{Anforderung: Benutzer registrieren}
