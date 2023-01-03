@@ -5,19 +5,19 @@
 % Beispielhaft eine Anforderung in "halbformaler" Beschreibung spezifizieren
 Mit diesem Kapitel findet zunächst eine Einführung in das Produkt \gqq{DEV-CHAT} statt.
 Anschließend werden Teile der in Kapitel~\ref{sec:SoftwareQualitaet} behandelten Aspekte der Softwarequalität, zusammen mit den Aspekten Effizienz, Kompatibilität und Sicherheit in Kapitel~\ref{sec:ProduktUndGebrauchsqualitaet} auf das Produkt angewendet.
-
-\noindent{}Um einen genaueren Einblick in das Produkt zu erhalten werden Nutzererwartungen und Akzeptanzkriterien für zwei typische aber verschiedene Nutzergruppen aufgestellt.
+\newparagraph
+Um einen genaueren Einblick in das Produkt zu erhalten werden Nutzererwartungen und Akzeptanzkriterien für zwei typische aber verschiedene Nutzergruppen aufgestellt.
 Ausgehend von dieser Analyse wird abschließend beispielhaft eine Anforderung in \gqq{halbformaler} Beschreibung spezifiziert.
 
 \subsection{Produktbeschreibung}
-\begin{figure}
+Bei dem vorliegenden Produkt handelt es sich um eine Web-Messenger-Applikation namens \gqq{DEV-CHAT}, die es ermöglicht, mit anderen Nutzern zu chatten.
+Abbildung~\ref{fig:Produktstruktur} stellt die Hauptfunktionen der Applikation -- die Benutzer-Authentifikation, die Schreibfunktion, sowie die Administration -- dar.
+\begin{figure}[H]
   \centering
   \includegraphics[width=1\textwidth, keepaspectratio]{images/Produktstruktur.png}
   \caption{Produktstruktur}
   \label{fig:Produktstruktur}
 \end{figure}
-Bei dem vorliegenden Produkt handelt es sich um eine Web-Messenger-Applikation namens \gqq{DEV-CHAT}, die es ermöglicht, mit anderen Nutzern zu chatten.
-Abbildung~\ref{fig:Produktstruktur} stellt die Hauptfunktionen der Applikation -- die Benutzer-Authentifikation, die Schreibfunktion, sowie die Administration -- dar.
 
 \subsubsection{Benutzer-Authentifikation}\label{sec:BenutzerAuthentifikation}
 Für die Authentifikation von Benutzern wird ein Login-System verwendet.
@@ -36,14 +36,14 @@ Für das Passwort gelten die folgenden Kriterien:
   \item Das Passwort muss mindestens einen Großbuchstaben, einen Kleinbuchstaben und eine Zahl enthalten
   \item Das Passwort darf nur aus lateinischen Buchstaben und Zahlen bestehen
 \end{itemize} 
-
-\noindent{}Die Sicherheit der Passwörter wird durch die Verwendung von Hashwerten gewährleistet.
+\noindent
+Die Sicherheit der Passwörter wird durch die Verwendung von Hashwerten gewährleistet.
 Das Passwort liegt somit nicht im Klartext, sondern als Hashwert in der Datenbank ab.
 Während dem Anmeldeprozess wird das eingegebene Klartext Passwort gehasht und mit dem in der Datenbank gespeicherten Hashwert verglichen.
 Stimmen die Werte überein, wird der Benutzer eingeloggt.
 Wird ein falsches Passwort eingegeben, wird der Benutzer durch das User Interface auf die Fehleingabe hingewiesen.
-
-\noindent{}Als Erweiterung des Login-Systems bietet \gqq{DEV-CHAT} die Möglichkeit, das eigene Passwort zu ändern.
+\newparagraph
+Als Erweiterung des Login-Systems bietet \gqq{DEV-CHAT} die Möglichkeit, das eigene Passwort zu ändern.
 Hierfür muss der Benutzer sowohl sein aktuelles Passwort, als auch das neue Passwort angeben.
 Das neue Passwort muss dabei die oben genannten Kriterien erfüllen.
 
@@ -51,17 +51,19 @@ Das neue Passwort muss dabei die oben genannten Kriterien erfüllen.
 Neben der Benutzer-Authentifikation bietet das Produkt die Möglichkeit, einen Chatraum zu erstellen oder einem bestehenden Chatraum beizutreten.
 Bei der Erstellung eines Raumes, wird ein neuer Raumname generiert, welcher in dem User Interface angezeigt wird und für die anderen Nutzer als Zugangscode dient.
 Dieser setzt sich dabei aus drei zufällig ausgewählten englischen Wörtern zusammen.
-
-\noindent{}Die Gültigkeit des Zugangscodes und damit auch des Chatraums ist standardmäßig auf einen Tag begrenzt.
+\newparagraph
+Die Gültigkeit des Zugangscodes und damit auch des Chatraums ist standardmäßig auf einen Tag begrenzt.
 In diesem Zeitraum können Nachrichten mit anderen Personen in dem erstellten Chatraum ausgetauscht werden.
 Die gesendeten Nachrichten werden in einer Datenbank gespeichert, wodurch jedem Chat-Teilnehmer der gesamte Nachrichtenverlauf angezeigt werden kann.
 Mit dem Ablauf der Gültigkeit des Zugangscodes werden aus Sicherheits- sowie Speicherplatzgründen alle Nachrichten aus der Datenbank gelöscht.
-
-\noindent{}Mittels einer aktiven Socket-Verbindung zischen Client und Server wird sichergestellt, dass gesendete Nachrichten in Echtzeit mit allen anderen Benutzern synchronisiert werden.
+\newparagraph
+Mittels einer aktiven Socket-Verbindung zwischen Client und Server wird sichergestellt, dass gesendete Nachrichten in Echtzeit mit allen anderen Benutzern synchronisiert werden.
 Dank dieser Technik entfallen zyklische Abfragen des Servers, wodurch die Performance der Applikation verbessert wird.
-\newline
+\newparagraph
+Neben der klassischen Schreibfunktion bietet \gqq{DEV-CHAT} auch die Möglichkeit, Kurzbefehle zu verwenden.
+Alle zur Verfügung stehenden Befehle sind in Tabelle~\ref{tab:Kurzbefehle} aufgelistet und beziehen sich ausschließlich auf den Raum, in dem sie ausgeführt werden.
 
-\begin{table}
+\begin{table}[H]
   \centering
   \begin{tabular}{|l|m{.5\linewidth}|m{.32\linewidth}|}
     \hline
@@ -83,8 +85,7 @@ Dank dieser Technik entfallen zyklische Abfragen des Servers, wodurch die Perfor
   \caption{Kurzbefehle}
   \label{tab:Kurzbefehle}
 \end{table}
-\noindent{}Neben der klassischen Schreibfunktion bietet \gqq{DEV-CHAT} auch die Möglichkeit, Kurzbefehle zu verwenden.
-Alle zur Verfügung stehenden Befehle sind in Tabelle~\ref{tab:Kurzbefehle} aufgelistet und beziehen sich ausschließlich auf den Raum, in dem sie ausgeführt werden.
+\noindent
 
 \subsubsection{Administration}
 Für die Moderation und Verwaltung des \gqq{DEV-CHAT} werden die Benutzer in zwei Rollen eingeteilt.
@@ -92,8 +93,8 @@ Standard-Benutzer sind in der Lage die in den vorherigen beiden Abschnitten besc
 Administratoren hingegen sind in der Lage weitere Aktionen auszuführen.
 Sie sind in erster Linie zuständig für die Verwaltung der Benutzer und Chat-Räume.
 Dazu bietet \gqq{DEV-CHAT} eine graphische Administrationsoberfläche, welche durch die Rolle \gqq{Admin} freigeschaltet wird.
-
-\noindent{}Innerhalb dieser Administrationsoberfläche können folgende Aktionen durchgeführt werden:
+\newparagraph
+Innerhalb dieser Administrationsoberfläche können folgende Aktionen durchgeführt werden:
 Benutzer löschen, Passwörter auf ein Standard Passwort zurücksetzen, Rollen ändern (\gqq{Standard} oder \gqq{Admin}), Chat-Räume mit einem bestimmten Namen erstellen, Chat-Räume löschen, das Ablaufdatum eines Chat-Raums ändern, Umfragen löschen, das Ablaufdatum einer Umfrage ändern, erstellte Tickets einsehen und deren Status ändern (\gqq{To Do} oder \gqq{Done}).
 
 \subsection{Merkmale der Qualität}\label{sec:ProduktUndGebrauchsqualitaet}
@@ -249,7 +250,7 @@ Beim Betreten der Seite wird der Benutzer beispielsweise aufgefordert, sich anzu
 Analog zu anderen Web-Applikationen bietet die Applikation ebenfalls einen Verweis auf die Registrierung.
 Neben dem Login Formular wird dem Benutzer zusätzlich ein Verweis zu einem \gqq{Getting Started} Guide angezeigt.
 Dieser stellt dem Benutzer die Benutzeroberfläche, sowie die wichtigsten Funktionen der Applikation vor.
-
+\newparagraph
 Durch den begrenzten Funktionsumfang der Applikation ist die Benutzung intuitiv und selbsterklärend.
 Gleichzeitig wird der Benutzer durch die Anzeige von Fehlermeldungen bei falschen Eingaben unterstützt.
 Dadurch ist die Applikation für alle Benutzer geeignet.
@@ -259,13 +260,13 @@ Dadurch ist die Applikation für alle Benutzer geeignet.
 Durch die Client Server Architektur der Applikation muss die Zuverlässigkeit sowohl für das Frontend, als auch für das Backend gewährleistet sein.
 Die Zuverlässigkeit des Backend hängt dabei grundsätzlich von drei Faktoren ab: dem Code, der Hardware und den verwendeten externen Systemen.
 Für die Zuverlässigkeit der Hardware sowie der externen Systeme müssen Anbieter und Technologien gewählt werden, die eine hohe Zuverlässigkeit garantieren.
-Im Falle des \gqq{DEV-CHAT} wurde auf die Firma \gqq{Supabase} als Datenbank-Provider zurückgegriffen, welche sich neben einer hohen Zuverlässigkeit vor allem auch durch ihre Kostenlosen Angebote auszeichnet.
+Im Falle des \gqq{DEV-CHAT} wurde auf die Firma \gqq{Supabase} als Datenbank-Provider zurückgegriffen, welche sich neben einer hohen Zuverlässigkeit vor allem auch durch ihre kostenlosen Angebote auszeichnet.
 Für den Betrieb des Backends wird auf eine eigene Hardware zurückgegriffen.
 Dadurch muss die Zuverlässigkeit durch uns gewährleistet werden.
 Die Zuverlässigkeit des Codes kann beispielsweise durch Unit-Tests und Integrationstests sichergestellt werden.
-Auf Grund der begrenzten Ressourcen wurde bislang auf die Verwendung von Unit- und Integrationstests verzichtet.
-
-\noindent{}Für die Zuverlässigkeit des Frontends beschränkt sich der Einflussbereich während der Entwicklung auf den Code, sowie das \ac{API} des Backends, da Faktoren wie die verwendete Hardware oder der verwendete Browser nicht durch die Entwickler beeinflusst werden können.
+Aufgrund der begrenzten Ressourcen wurde bislang auf die Verwendung von Unit- und Integrationstests verzichtet.
+\newparagraph
+Für die Zuverlässigkeit des Frontends beschränkt sich der Einflussbereich während der Entwicklung auf den Code, sowie das \ac{API} des Backends, da Faktoren wie die verwendete Hardware oder der verwendete Browser nicht durch die Entwickler beeinflusst werden können.
 Auch hier können für die Zuverlässigkeit des Codes beispielsweise Unit-Tests und Integrationstests verwendet werden.
 
 \subsubsection{Sicherheit}
@@ -277,12 +278,12 @@ Um die Sicherheit der Daten und damit der Website zu gewährleisten, werden vers
 Zunächst wird für die Kommunikation zwischen Client und Server das Protokoll \ac{HTTPS} verwendet, wodurch sämtliche Übertragungen mittels dem \ac{SSL}-Verfahren verschlüsselt werden.
 Dies ermöglicht unter Anderem die sichere Übertragung der Klartext Passwörter während des Login-Prozesses.
 Um die Sicherheit der Passwörter in der Datenbank zu gewährleisten, werden diese wie bereits in Kapitel~\ref{sec:BenutzerAuthentifikation} beschrieben als Hashwert gespeichert.
-
-\noindent{}Um den Zugriff auf Bereiche der Web Applikation für nicht autorisierte Benutzer zu verhindern, wird bei der Erstellung eines neuen Benutzers die Berechtigung \gqq{Standard} zugewiesen.
+\newparagraph
+Um den Zugriff auf Bereiche der Web Applikation für nicht autorisierte Benutzer zu verhindern, wird bei der Erstellung eines neuen Benutzers die Berechtigung \gqq{Standard} zugewiesen.
 Für alle Zugriffe auf Funktionen der Applikation, welche nur durch eingeloggte Benutzer ausgeführt werden dürfen, überprüft das Backend des Systems zunächst den Login Status des Benutzers.
 Für den Zugriff auf besondere Bereiche wie etwa der Administrationsoberfläche, wird zusätzlich die Berechtigung des Benutzers geprüft.
-
-\noindent{}Erlaubt die Weboberfläche dem Benutzer die Eingabe von Text, welcher anschließend an das Backend übertragen wird, so werden die Eingaben zunächst vom Backend validiert.
+\newparagraph
+Erlaubt die Weboberfläche dem Benutzer die Eingabe von Text, welcher anschließend an das Backend übertragen wird, so werden die Eingaben zunächst vom Backend validiert.
 Dadurch können Angriffe wie \ac{SQL}-Injections oder \ac{XSS} verhindert werden.
 
 \subsubsection{Wartbarkeit}
@@ -291,20 +292,20 @@ Dadurch können Angriffe wie \ac{SQL}-Injections oder \ac{XSS} verhindert werden
 % Trennung zwischen Frontend und Backend
 Für die Umsetzung der Web Applikation wurde das Framework Next.js verwendet, welches neben der Entwicklung von UI Komponenten basierend auf React, auch ein Backend mittels Node.js bereitstellt.
 Dabei wird durch die Projektstruktur eine klare Trennung zwischen Frontend und Backend sichergestellt.
-
-\noindent{}Im Rahmen des \gqq{DEV-CHAT} wurde auf eine Objektorientierte Programmierung mit der Verwendung von klassenbasierten Komponenten gesetzt.
+\newparagraph
+Im Rahmen des \gqq{DEV-CHAT} wurde auf eine Objektorientierte Programmierung mit der Verwendung von klassenbasierten Komponenten gesetzt.
 Dadurch wird eine modulare Struktur der Applikation erreicht.
 Diese sorgt für eine unkomplizierte Erweiterbarkeit der Applikation, welche besonders an dem Beispiel der Kurzbefehle deutlich wird.
 Die Kurzbefehle sind in ihrer Struktur durch eine Oberklasse definiert.
 Abgeleitet von der Oberklasse werden die einzelnen Kurzbefehle implementiert, wodurch für eine Erweiterung der Kurzbefehle lediglich eine neue Unterklasse angelegt werden muss.
-
-\noindent{}Durch die Unterteilung der Applikation in mehrere Module (Klassen) wird außerdem die Testbarkeit der Applikation erleichtert.
+\newparagraph
+Durch die Unterteilung der Applikation in mehrere Module (Klassen) wird außerdem die Testbarkeit der Applikation erleichtert.
 
 \subsubsection{Übertragbarkeit}
-Durch die Verwendung einer Web Applikation ist die Übertragbarkeit der Applikation in einem hohen Umfang gegeben.
-Dies lässt sich dadurch begründen, dass Web Browser auf allen gängigen Betriebssystemen zur Verfügung stehen, wodurch eine Betriebssystemunabhängigkeit erreicht wird.
-Gleichzeitig stehen Web Browser sowohl auf mobilen, als auch auf stationären Endgeräten zur Verfügung.
-Durch die Adaptive Entwicklung der Benutzeroberfläche, wie in Kapitel~\ref{sec:Kompatibilitaet} beschreiben, lässt sich die Anwendung somit auf allen gängigen Endgeräten ohne Einschränkungen der Benutzerfreundlichkeit nutzen.
+Durch die Verwendung einer Webapplikation ist die Übertragbarkeit der Applikation in einem hohen Umfang gegeben.
+Dies lässt sich dadurch begründen, dass Webbrowser auf allen gängigen Betriebssystemen zur Verfügung stehen, wodurch eine Betriebssystemunabhängigkeit erreicht wird.
+Gleichzeitig stehen Webbrowser sowohl auf mobilen, als auch auf stationären Endgeräten zur Verfügung.
+Durch die adaptive Entwicklung der Benutzeroberfläche, wie in Kapitel~\ref{sec:Kompatibilitaet} beschreiben, lässt sich die Anwendung somit auf allen gängigen Endgeräten ohne Einschränkungen der Benutzerfreundlichkeit nutzen.
 
 \subsection{Nutzererwartungen}
 Die Erwartungen von Nutzern an ein Softwareprodukt lassen sich grundsätzlich in die drei Kategorien verborgene Erwartungen, prägende Erwartungen und kognitive Erwartungen unterteilen.
@@ -375,11 +376,11 @@ Auch Anforderungen an die Geschwindigkeit der Applikation sind für den Nutzer n
 Im Gegensatz zu dem technisch wenig versierten Nutzer, kann der technisch versierte Nutzer auf Erfahrungen mit anderen Chat Applikationen zurückgreifen.
 Aus diesem Grund erwartet er eine einfache, intuitive Bedienung der Applikation, wobei besonders die Reaktionsgeschwindigkeit einen hohen Stellenwert einnimmt.
 Zusätzlich erwartet er die für Chat Applikationen üblichen Funktionen, wie die Unterteilung in verschiedene Chat-Räume und die Echtzeitkommunikation zwischen den Nutzern.
-
-\noindent{}Durch den Konsolen-Style des Chat-Raums erwartet der Nutzer ebenfalls die Möglichkeit, Befehle zu verwenden.
+\newparagraph
+Durch den Konsolen-Style des Chat-Raums erwartet der Nutzer ebenfalls die Möglichkeit, Befehle zu verwenden.
 Der Befehl \gqq{/help} ist dabei ein weit verbreiteter Befehl um eine Liste aller verfügbaren Befehle anzuzeigen.
-
-\noindent{}Erhält der Nutzer die \gqq{Admin} Rolle, so macht er sich zunächst mit der Administrationsoberfläche vertraut.
+\newparagraph
+Erhält der Nutzer die \gqq{Admin} Rolle, so macht er sich zunächst mit der Administrationsoberfläche vertraut.
 Da er sich bereits mit der Applikation auseinandergesetzt hat, weiß er wie er mit den bereitgestellten Funktionen umgehen muss.
 Erhält er ungewollt die Rolle \gqq{Admin} kann der technisch versierte Nutzer entweder verantwortungsvoll mit der Rolle umgehen oder gar zu einer noch größeren Gefahr als der technisch weniger versierte Nutzer werden.
 Durch sein erweitertes Wissen über den Umgang mit der Applikation kann er gezielt Schaden anrichten, weshalb eine ungewollte Vergabe der Rolle ebenfalls zu vermeiden ist.
@@ -402,7 +403,8 @@ Durch sein erweitertes Wissen über den Umgang mit der Applikation kann er gezie
 \end{itemize}
 
 \subsection{Spezifizieren einer Anforderungen in \gqq{halbformaler} Beschreibung}
-\begin{table}[h!]
+Die Tabelle~\ref{tab:AnforderungBenutzerRegistrieren} zeigt die Anforderung \gqq{Benutzer registrieren} in \gqq{halbformaler} Beschreibung.
+\begin{table}[H]
   \centering
   \resizebox{\columnwidth}{!}{%
   \begin{tabular}{|l|l|}
@@ -426,4 +428,3 @@ Durch sein erweitertes Wissen über den Umgang mit der Applikation kann er gezie
   \caption{Anforderung: Benutzer registrieren}
   \label{tab:AnforderungBenutzerRegistrieren}
 \end{table}
-Tabelle~\ref{tab:AnforderungBenutzerRegistrieren} zeigt die Anforderung \gqq{Benutzer registrieren} in \gqq{halbformaler} Beschreibung.
