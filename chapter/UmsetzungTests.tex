@@ -185,3 +185,72 @@ Die Akzeptanz-Tests zur Verifikation der User-Storys werden manuell am Produkt a
 Sind alle Tests bestanden kann ein Release freigegeben werden.
 Läuft das System in der Production werden zyklisch Availability-Tests durchgeführt, um den Zugang zu \gqq{DEV-CHAT} und der Datenbank sicherzustellen.
 \subsection{Exemplarische Durchführung}
+\subsubsection{Testfall 1: Benutzer registrieren}
+% Testfall 1: Benutzer registrieren
+Bei diesem Test wird überprüft, ob ein Benutzer sich registrieren kann.
+\paragraph{Ablaufbeschreibung} \mbox{}\\
+Ausgangssituation: Instanz wird ausgeführt und mit dem Browser erreichbar. Der Benutzer ist noch nicht registriert. Folgende Schritte:
+
+\begin{enumerate}
+  \item Website Aufrufen.
+  \item Registrierungsseite aufrufen.
+  \item Benötigte Registrierungsdaten eingeben, z.B. Name, Passwort, Passwort wiederholen.
+  \item Verifizieren, ob der Benutzer erfolgreich registriert wurde und auf die Startseite weitergeleitet wurde.
+\end{enumerate}
+
+\paragraph{Durchführung}
+\begin{enumerate}
+  \item Browser geöffnet und Website über \gqq{http://localhost:3001} aufgerufen. \newline
+  ==> Website erscheint nach kurzer Ladezeit.
+  \item Auf den Button \gqq{Create Account} geklickt. \newline
+  ==> Registrierungsseite wird mit einem leeren Formular angezeigt.
+  \item Registrierungsdaten eingeben: Name, Passwort, Passwort wiederholen. \newline
+  ==> Registrierungsdaten werden im Formular angezeigt.
+  \item Auf \gqq{Create} geklickt. \newline
+  ==> Benutzer wird registriert, dessen Daten auf die Datenbank gespeichert und auf die Startseite weitergeleitet.
+\end{enumerate}
+
+\subsubsection{Testfall 2: Nachrichten senden}
+% Testfall 2: Nachrichten senden
+Bei diesem Test wird überprüft, ob ein Benutzer Nachrichten senden kann.
+\paragraph{Ablaufbeschreibung} \mbox{}\\
+Ausgangssituation: Instanz wird ausgeführt und mit dem Browser erreichbar. Der Benutzer ist eingeloggt. Folgende Schritte: 
+
+\begin{enumerate}
+  \item Website Aufrufen.
+  \item Bestehenden Chat-Raum mit einem Chat-Key beitreten oder neuen Chat-Raum erstellen.
+  \item Nachricht eingeben.
+  \item Nachricht senden.
+  \item Verifizieren, ob die Nachricht erfolgreich gesendet wurde.
+\end{enumerate}
+
+\paragraph{Durchführung}
+\begin{enumerate}
+  \item Browser geöffnet und Website über \gqq{http://localhost:3001} aufgerufen. \newline
+  ==> Website erscheint nach kurzer Ladezeit.
+  \item In das Textfeld \gqq{Chat-Key} einen bestehenden Key eingeben oder/und auf den Button \gqq{Join} klicken. \newline
+  ==> Der Benutzer wird in einen neuen oder bestehenden Chat-Raum weitergeleitet.
+  \item Nachricht eingeben. \newline
+  ==> Nachricht in dem Textfeld \gqq{Gib eine Nachricht ein} eingeben.
+  \item Mit \gqq{Enter} die Nachricht senden. \newline
+  ==> Nachricht wird gesendet und in dem Chat-Raum angezeigt.
+\end{enumerate}
+
+\subsubsection{Testfall 3: Administrationsbereich aufrufen}
+% Testfall 3: Administrationsbereich aufrufen
+Bei diesem Test wird überprüft, ob ein Benutzer den Administrationsbereich aufrufen kann.
+\paragraph{Ablaufbeschreibung} \mbox{}\\
+Ausgangssituation: Instanz wird ausgeführt und mit dem Browser erreichbar. Der Benutzer ist eingeloggt. Folgende Schritte: 
+\begin{enumerate}
+  \item Website Aufrufen.
+  \item Den Button \gqq{Admin Settings} klicken.
+  \item Verifizieren, ob der Benutzer auf die Administrationsseite weitergeleitet wurde.
+\end{enumerate}
+
+\paragraph{Durchführung}
+\begin{enumerate}
+  \item Browser geöffnet und Website über \gqq{http://localhost:3001} aufgerufen. \newline
+  ==> Website erscheint nach kurzer Ladezeit.
+  \item Auf den Button \gqq{Admin Settings} geklickt. \newline
+  ==> Der Benutzer wird auf die Administrationsseite weitergeleitet.
+\end{enumerate}
