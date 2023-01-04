@@ -8,7 +8,7 @@ Abschließend werden exemplarisch zwei Testfälle ausformuliert und durchgeführ
 Da es sich bei einem Software Produkt nicht um ein herkömmliches materielles Produkt handelt, gestaltet sich die Aufwandsschätzung für die Umsetzung eines Software Produkts schwierig.
 Besonders der Entwicklungsfortschritt und der Grad der Fertigstellung lassen sich nur schwer messen.
 Aus diesem Grund wurden verschiedene Modelle entwickelt, die eine Aufwandsschätzung ermöglichen.
-Im Rahmen dieser Arbeit werden das \ac{COCOMO}, der Netzplan und die \ac{FPA} genauer betrachtet.
+Im Rahmen dieser Arbeit werden das \ac{COCOMO} und die \ac{FPA} genauer betrachtet.
 
 \subsubsection{Constructive Cost Model}
 % COCOMO
@@ -37,10 +37,6 @@ Folglich ist das Produkt in die kleinste Komplexitätsstufe, den sogenannten \gq
 Dazu werden die Formeln aus \eqref{eq:cocomo} verwendet.
 Es ergibt sich ein Aufwand von ca. 21,3~\ac{PM} ($\approx 3200$ Stunden).
 Daraus resultiert eine \ac{TDEV} von ca. 8 Monaten mit einem Personalbedarf von $\frac{21,3}{8} \approx 3$ Personen.
-
-\subsubsection{Netzplan}
-% Netzplan
-% TODO: @Lukas @Johannes Wollen wir das überhaupt machen und wenn ja wie detailliert?
 
 \subsubsection{Function Point Analyse}
 % FPA
@@ -138,6 +134,8 @@ Insgesamt ergibt sich eine Punktzahl von 104~\ac{fp}, was einem Zeitaufwand von 
 % COCOMO: 21,3 PM (3200 Stunden)
 % Netzplan: 
 % FPA: 1000 Stunden
+In den vorangehenden zwei Unterkapiteln wurden zwei verschiedene Methoden zur Schätzung des Aufwands für die Neuentwicklung des \gqq{DEV-CHAT} vorgestellt und durchgeführt.
+Die Ergebnisse der zwei Methoden sind in Tabelle \ref{tab:aufwandsschaetzungErgebnisse} zusammengefasst.
 \begin{table}[H]
   \centering
   \begin{tabular}{|l|c|}
@@ -145,8 +143,6 @@ Insgesamt ergibt sich eine Punktzahl von 104~\ac{fp}, was einem Zeitaufwand von 
     \textbf{Methoden} & \textbf{Zeitaufwand} in Stunden \\
     \hline
     \ac{COCOMO} & 3200 \\
-    \hline
-    Netzplan &  \\
     \hline
     \ac{FPA} & 1000 \\
     \hline
@@ -156,8 +152,8 @@ Insgesamt ergibt sich eine Punktzahl von 104~\ac{fp}, was einem Zeitaufwand von 
   \caption{Ergebnisse der Aufwandsschätzung}
   \label{tab:aufwandsschaetzungErgebnisse}
 \end{table}
-In den vorangehenden drei Unterkapiteln wurden drei verschiedene Methoden zur Schätzung des Aufwands für die Neuentwicklung des \gqq{DEV-CHAT} vorgestellt und durchgeführt.
-Die Ergebnisse der drei Methoden sind in Tabelle \ref{tab:aufwandsschaetzungErgebnisse} zusammengefasst.
+
+\noindent{}Unter Berücksichtigung beider Schätzungen ergibt sich ein Gesamtaufwand von ungefähr 2100 Stunden für die Neuentwicklung des \gqq{DEV-CHAT}.
 
 \subsection{Testplan und Teststrategie}
 % Testplan
