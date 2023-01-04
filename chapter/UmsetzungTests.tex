@@ -166,5 +166,26 @@ Im folgenden Abschnitt wird ein risikobasierter Testplan erstellt und die Testst
 Hierzu müssen zunächst in einer Risikoanalyse mögliche Risiken identifiziert werden.
 Diese wurden bereits im Kapitel~\ref{sec:FMEA} erfasst und mit einer Fehlerschwere und Wahrscheinlichkeit eingeordnet.
 \subsubsection{Risikobasierter Testplan}
-
+\subsubsection*{Testumfang}
+Um die Qualität des \gqq{DEV-CHAT} sicherzustellen, muss das System getestet werden. Hierzu werden sowohl Black-Box als auch White-Box Tests verwendet.
+Mit Unittests als White-Box Test wird die erwartete Funktionalität des Quellcodes sichergestellt.
+Zusätzlich werden Integrationstests verwendet, um das Zusammenspiel der einzelnen Systemkomponenten über die zuvor definierten Schnittstellen zu gewährleisten.
+\newparagraph
+Als Black-Box Tests werden Systemtests verwendet.
+In der Konzeptionsphase wurden die Use-Cases des Systems modelliert und Abläufe definiert.
+Mit den Systemtests werden diese Abläufe simuliert und überprüft, ob diese wie erwartet funktionieren.
+Abschließend werden Akzeptanz-Tests verwendet um die User-Storys zu verifizieren.
+Während der Production werden Availability-Tests durchgeführt, um die Verfügbarkeit zu gewährleisten.
+\subsubsection*{Teststrategie}
+Bei der Entwicklung wird der \ac{TDD} Ansatz verfolgt, d.h. dass die Tests vor der Entwicklung der Funktion geschrieben werden.
+Zusätzlich wird \ac{CI} verwendet, um einen automatisierten Build der Software zu erstellen und um die Tests auszuführen.
+Bei Erstellung der Unittests gilt es zu beachten, dass nicht nur Fehlerfälle oder Grenzfälle, sondern auch normal anzunehmende Werte getestet werden.
+Die Integrationstests prüfen primär die korrekte Verbindung von BackEnd zu FrontEnd.
+Hierzu wird das System in einer Demo-Umgebung ausgeführt.
+Innerhalb dieser Umgebung werden auch die Systemtests als Black-Box Test ausgeführt.
+\newparagraph
+Die Unittests, Integrationstests und Systemtests werden automatisiert in einer Pipeline im Rahmen von \ac{CI} ausgeführt und dokumentiert.
+Die Akzeptanz-Tests zur Verifikation der User-Storys werden manuell am Produkt auf einem Test-Server ausgeführt und manuell dokumentiert. 
+Sind alle Tests bestanden kann ein Release freigegeben werden.
+Läuft das System in der Production werden zyklisch Availability-Tests durchgeführt, um den Zugang zu \gqq{DEV-CHAT} und der Datenbank sicherzustellen.
 \subsection{Exemplarische Durchführung}
