@@ -1,0 +1,256 @@
+\section{Umsetzung und Tests}
+In diesem Kapitel wird auf die Umsetzung und Teststrategie eines Software Produkts eingegangen.
+Hierzu wird zunächst eine Aufwandsschätzung für die Umsetzung einer Neuentwicklung des \gqq{DEV-CHAT} durchgeführt.
+In einem weiteren Schritt wird ein risikobasierter Testplan erstellt und eine Teststrategie entwickelt.
+Abschließend werden exemplarisch zwei Testfälle ausformuliert und durchgeführt.
+
+\subsection{Aufwandsschätzung einer Neuentwicklung}
+Da es sich bei einem Software Produkt nicht um ein herkömmliches materielles Produkt handelt, gestaltet sich die Aufwandsschätzung für die Umsetzung eines Software Produkts schwierig.
+Besonders der Entwicklungsfortschritt und der Grad der Fertigstellung lassen sich nur schwer messen.
+Aus diesem Grund wurden verschiedene Modelle entwickelt, die eine Aufwandsschätzung ermöglichen.
+Im Rahmen dieser Arbeit werden das \ac{COCOMO} und die \ac{FPA} genauer betrachtet.
+
+\subsubsection{Constructive Cost Model}
+% COCOMO
+% 8 KDSI -> PM = 2,4 * KDSI^1,05 -> 2,4 * 8^1,05 = 21,3
+% TDEV = 2,5 * PM^0,38 -> 2,5 * 16,8^0,38 = 8
+% Personalbedarf: 21,3 / 8 = 2,7
+Das \ac{COCOMO} bewertet den Aufwand einer Software anhand der Anzahl der benötigten Programmzeilen.
+Im Gegensatz zu dem Entwicklungsaufwand selbst, lassen sich die benötigten Programmzeilen leicht abschätzen.
+Trotzdem birgt das Verfahren einige Schwächen.
+So ist die Abschätzung der benötigten Programmzeilen mit einem hohen Aufwand verbunden und erfordert bereits zu Beginn des Projekts eine technologiespezifische Expertise.
+Außerdem werden agile Entwicklungsprozesse nicht berücksichtigt, weshalb sich \ac{COCOMO} besonders in Kombination mit dem Wasserfallmodell anbietet.
+
+\noindent{}Um das \ac{COCOMO} durchführen zu können, muss zunächst die Komplexität des Produkts bestimmt werden.
+Diese ergibt sich, wie bereits erwähnt, durch die Anzahl der benötigten Programmzeilen, welche in der Einheit \ac{KDSI} angegeben werden.
+Da es sich hier um eine Neuentwicklung handelt, wird die Komplexität der Neuentwicklung in etwa der Komplexität des \gqq{DEV-CHAT} (8~\ac{KDSI}) entsprechen.
+Folglich ist das Produkt in die kleinste Komplexitätsstufe, den sogenannten \gqq{Organic Mode}, einzuordnen.
+
+\begin{equation}
+  \begin{split}
+    \text{\acs{PM}} &= 2,4 \cdot \text{\acs{KDSI}}^{1,05} \\
+    \text{\acs{TDEV}} &= 2,5 \cdot \text{\acs{PM}}^{0,38}
+  \end{split}
+  \label{eq:cocomo}
+\end{equation}
+\noindent{}Aus diesen Informationen lässt sich nun der Aufwand, gemessen in \ac{PM} ($1~\ac{PM} \equiv$ 19 Arbeitstage zu je 8 Stunden), sowie die \ac{TDEV} berechnen.
+Dazu werden die Formeln aus \eqref{eq:cocomo} verwendet.
+Es ergibt sich ein Aufwand von ca. 21,3~\ac{PM} ($\approx 3200$ Stunden).
+Daraus resultiert eine \ac{TDEV} von ca. 8 Monaten mit einem Personalbedarf von $\frac{21,3}{8} \approx 3$ Personen.
+
+\subsubsection{Function Point Analyse}
+% FPA
+Bei der \ac{FPA} werden die Funktionalen Anforderungen eines Produkts genauer betrachtet und in kleinstmögliche, sinnvolle Aktivitäten zerlegt.
+Jedem Elementarprozess wird anschließend ein definierter Punktewert, gemessen in \ac{fp}, zugewiesen.
+Die Summe aller Einzelwerte ergibt die Functional-Size des Produkts.
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{|l|c|}
+    \hline
+    \textbf{Elementarprozessart} & \textbf{Punktewert} in \acs{fp} \\
+    \hline
+    \ac{EI} & \EI \\
+    \hline
+    \ac{EO} & \EO \\
+    \hline
+    \ac{EQ} & \EQ \\
+    \hline
+    \ac{ILF} & \ILF \\
+    \hline
+    \ac{EIF} & \EIF \\
+    \hline
+  \end{tabular}
+  \caption{Punktewerte nach der Rapid-Näherung}
+  \label{tab:rapidNaeherung}
+\end{table}
+\noindent{}Bei den Elementarprozessen wird zwischen fünf verschiedenen Arten unterschieden.
+Tabelle \ref{tab:rapidNaeherung} zeigt die verschiedenen Arten und ihre jeweiligen Punktewerte nach der Rapid-Näherung.
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{|l|c|c|}
+    \hline
+    \textbf{Elementarprozess} & \textbf{Typ} & \textbf{Punktewert} in \acs{fp} \\
+    \hline
+    Benutzer Datenbank & \acs{ILF} & \ILF \\
+    \hline
+    Login & \acs{EI} & \EI \\
+    \hline
+    Registrieren & \acs{EI} & \EI \\
+    \hline
+    Passwort ändern & \acs{EI} & \EI \\
+    \hline
+    Chat Datenbank & \acs{ILF} & \ILF \\
+    \hline
+    Raum erstellen & \acs{EI} & \EI \\
+    \hline
+    Nachrichten erstellen & \acs{EI} & \EI \\
+    \hline
+    Nachrichten lesen/synchronisieren & \acs{EQ} & \EQ \\
+    \hline
+    Umfrage Datenbank & \acs{ILF} & \ILF \\
+    \hline
+    Kurzbefehle & \acs{EI} & \EI \\
+    \hline
+    Umfrage erstellen & \acs{EI} & \EI \\
+    \hline
+    Umfrage ausgeben & \acs{EQ} & \EQ \\
+    \hline
+    Umfrage abstimmen & \acs{EI} & \EI \\
+    \hline
+    Rechnung ausführen & \acs{EI} & \EI \\
+    \hline
+    Ticket Datenbank & \acs{ILF} & \ILF \\
+    \hline
+    Ticket erstellen & \acs{EI} & \EI \\
+    \hline
+    Benutzer anzeigen & \acs{EQ} & \EQ \\
+    \hline
+    Benutzer löschen & \acs{EI} & \EI \\
+    \hline
+    Benutzer Passwort zurücksetzen & \acs{EI} & \EI \\
+    \hline
+    Benutzer Rolle vergeben & \acs{EI} & \EI \\
+    \hline
+    Custom-Chat-Raum erstellen & \acs{EI} & \EI \\
+    \hline
+    Chat-Raum/Umfrage/Tickets löschen & \acs{EI} & \EI \\
+    \hline
+    Chat-Raum/Umfrage Ablaufdatum setzen & \acs{EI} & \EI \\
+    \hline
+    \hline
+    \multicolumn{2}{|l|}{\textbf{Summe der Elementarprozessbewertungen}} & \textbf{104} \\ % 16*EI + 3*EQ + 4*ILF
+    \hline
+  \end{tabular}
+  \caption{Funktion Point Analyse der Neuentwicklung}
+  \label{tab:FPA}
+\end{table}
+\noindent{}Basierend auf dieser Bewertungsskala wird die \ac{FPA} für die Neuentwicklung des \gqq{DEV-CHAT} in Tabelle~\ref{tab:FPA} durchgeführt.
+Insgesamt ergibt sich eine Punktzahl von 104~\ac{fp}, was einem Zeitaufwand von ca. 1000 Stunden für die Neuentwicklung des \gqq{DEV-CHAT} entspricht.
+
+\subsubsection{Fazit}
+% Fazit
+% COCOMO: 21,3 PM (3200 Stunden)
+% Netzplan: 
+% FPA: 1000 Stunden
+In den vorangehenden zwei Unterkapiteln wurden zwei verschiedene Methoden zur Schätzung des Aufwands für die Neuentwicklung des \gqq{DEV-CHAT} vorgestellt und durchgeführt.
+Die Ergebnisse der zwei Methoden sind in Tabelle \ref{tab:aufwandsschaetzungErgebnisse} zusammengefasst.
+\begin{table}[H]
+  \centering
+  \begin{tabular}{|l|c|}
+    \hline
+    \textbf{Methoden} & \textbf{Zeitaufwand} in Stunden \\
+    \hline
+    \ac{COCOMO} & 3200 \\
+    \hline
+    \ac{FPA} & 1000 \\
+    \hline
+    \textbf{Durchschnitt} & 2100 \\
+    \hline
+  \end{tabular}
+  \caption{Ergebnisse der Aufwandsschätzung}
+  \label{tab:aufwandsschaetzungErgebnisse}
+\end{table}
+
+\noindent{}Unter Berücksichtigung beider Schätzungen ergibt sich ein Gesamtaufwand von ungefähr 2100 Stunden für die Neuentwicklung des \gqq{DEV-CHAT}.
+
+\subsection{Testplan und Teststrategie}
+% Testplan
+% Test-umfang, -kriterien, -methode
+Im folgenden Abschnitt wird ein risikobasierter Testplan erstellt und die Teststrategie erläutert.
+Hierzu müssen zunächst in einer Risikoanalyse mögliche Risiken identifiziert werden.
+Diese wurden bereits im Kapitel~\ref{sec:FMEA} erfasst und mit einer Fehlerschwere und Wahrscheinlichkeit eingeordnet.
+\subsubsection{Risikobasierter Testplan}
+\subsubsection*{Testumfang}
+Um die Qualität des \gqq{DEV-CHAT} sicherzustellen, muss das System getestet werden. Hierzu werden sowohl Black-Box als auch White-Box Tests verwendet.
+Mit Unittests als White-Box Test wird die erwartete Funktionalität des Quellcodes sichergestellt.
+Zusätzlich werden Integrationstests verwendet, um das Zusammenspiel der einzelnen Systemkomponenten über die zuvor definierten Schnittstellen zu gewährleisten.
+\newparagraph
+Als Black-Box Tests werden Systemtests verwendet.
+In der Konzeptionsphase wurden die Use-Cases des Systems modelliert und Abläufe definiert.
+Mit den Systemtests werden diese Abläufe simuliert und überprüft, ob diese wie erwartet funktionieren.
+Abschließend werden Akzeptanz-Tests verwendet um die User-Storys zu verifizieren.
+Während der Production werden Availability-Tests durchgeführt, um die Verfügbarkeit zu gewährleisten.
+\subsubsection*{Teststrategie}
+Bei der Entwicklung wird der \ac{TDD} Ansatz verfolgt, d.h. dass die Tests vor der Entwicklung der Funktion geschrieben werden.
+Zusätzlich wird \ac{CI} verwendet, um einen automatisierten Build der Software zu erstellen und um die Tests auszuführen.
+Bei Erstellung der Unittests gilt es zu beachten, dass nicht nur Fehlerfälle oder Grenzfälle, sondern auch normal anzunehmende Werte getestet werden.
+Die Integrationstests prüfen primär die korrekte Verbindung von BackEnd zu FrontEnd.
+Hierzu wird das System in einer Demo-Umgebung ausgeführt.
+Innerhalb dieser Umgebung werden auch die Systemtests als Black-Box Test ausgeführt.
+\newparagraph
+Die Unittests, Integrationstests und Systemtests werden automatisiert in einer Pipeline im Rahmen von \ac{CI} ausgeführt und dokumentiert.
+Die Akzeptanz-Tests zur Verifikation der User-Storys werden manuell am Produkt auf einem Test-Server ausgeführt und manuell dokumentiert. 
+Sind alle Tests bestanden kann ein Release freigegeben werden.
+Läuft das System in der Production werden zyklisch Availability-Tests durchgeführt, um den Zugang zu \gqq{DEV-CHAT} und der Datenbank sicherzustellen.
+\subsection{Exemplarische Durchführung}
+\subsubsection{Testfall 1: Benutzer registrieren}
+% Testfall 1: Benutzer registrieren
+Bei diesem Test wird überprüft, ob ein Benutzer sich registrieren kann.
+\paragraph{Ablaufbeschreibung} \mbox{}\\
+Ausgangssituation: Instanz wird ausgeführt und mit dem Browser erreichbar. Der Benutzer ist noch nicht registriert. Folgende Schritte:
+
+\begin{enumerate}
+  \item Website Aufrufen.
+  \item Registrierungsseite aufrufen.
+  \item Benötigte Registrierungsdaten eingeben, z.B. Name, Passwort, Passwort wiederholen.
+  \item Verifizieren, ob der Benutzer erfolgreich registriert wurde und auf die Startseite weitergeleitet wurde.
+\end{enumerate}
+
+\paragraph{Durchführung}
+\begin{enumerate}
+  \item Browser geöffnet und Website über \gqq{http://localhost:3001} aufgerufen. \newline
+  ==> Website erscheint nach kurzer Ladezeit.
+  \item Auf den Button \gqq{Create Account} geklickt. \newline
+  ==> Registrierungsseite wird mit einem leeren Formular angezeigt.
+  \item Registrierungsdaten eingeben: Name, Passwort, Passwort wiederholen. \newline
+  ==> Registrierungsdaten werden im Formular angezeigt.
+  \item Auf \gqq{Create} geklickt. \newline
+  ==> Benutzer wird registriert, dessen Daten auf die Datenbank gespeichert und auf die Startseite weitergeleitet.
+\end{enumerate}
+
+\subsubsection{Testfall 2: Nachrichten senden}
+% Testfall 2: Nachrichten senden
+Bei diesem Test wird überprüft, ob ein Benutzer Nachrichten senden kann.
+\paragraph{Ablaufbeschreibung} \mbox{}\\
+Ausgangssituation: Instanz wird ausgeführt und mit dem Browser erreichbar. Der Benutzer ist eingeloggt. Folgende Schritte: 
+
+\begin{enumerate}
+  \item Website Aufrufen.
+  \item Bestehenden Chat-Raum mit einem Chat-Key beitreten oder neuen Chat-Raum erstellen.
+  \item Nachricht eingeben.
+  \item Nachricht senden.
+  \item Verifizieren, ob die Nachricht erfolgreich gesendet wurde.
+\end{enumerate}
+
+\paragraph{Durchführung}
+\begin{enumerate}
+  \item Browser geöffnet und Website über \gqq{http://localhost:3001} aufgerufen. \newline
+  ==> Website erscheint nach kurzer Ladezeit.
+  \item In das Textfeld \gqq{Chat-Key} einen bestehenden Key eingeben oder/und auf den Button \gqq{Join} klicken. \newline
+  ==> Der Benutzer wird in einen neuen oder bestehenden Chat-Raum weitergeleitet.
+  \item Nachricht eingeben. \newline
+  ==> Nachricht in dem Textfeld \gqq{Gib eine Nachricht ein} eingeben.
+  \item Mit \gqq{Enter} die Nachricht senden. \newline
+  ==> Nachricht wird gesendet und in dem Chat-Raum angezeigt.
+\end{enumerate}
+
+\subsubsection{Testfall 3: Administrationsbereich aufrufen}
+% Testfall 3: Administrationsbereich aufrufen
+Bei diesem Test wird überprüft, ob ein Benutzer den Administrationsbereich aufrufen kann.
+\paragraph{Ablaufbeschreibung} \mbox{}\\
+Ausgangssituation: Instanz wird ausgeführt und mit dem Browser erreichbar. Der Benutzer ist eingeloggt. Folgende Schritte: 
+\begin{enumerate}
+  \item Website Aufrufen.
+  \item Den Button \gqq{Admin Settings} klicken.
+  \item Verifizieren, ob der Benutzer auf die Administrationsseite weitergeleitet wurde.
+\end{enumerate}
+
+\paragraph{Durchführung}
+\begin{enumerate}
+  \item Browser geöffnet und Website über \gqq{http://localhost:3001} aufgerufen. \newline
+  ==> Website erscheint nach kurzer Ladezeit.
+  \item Auf den Button \gqq{Admin Settings} geklickt. \newline
+  ==> Der Benutzer wird auf die Administrationsseite weitergeleitet.
+\end{enumerate}

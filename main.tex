@@ -80,7 +80,7 @@
 \def\vBetreuer{Benjamin Jung}                        %% Vorname Nachname
 
 \def\vAbgabedatum{\today}               %% DD. MONTH YYYY
-\def\vBearbeitungszeitraum{01.10.2022 - 21.11.2022}            %% DD.MM.YYYY - DD.MM.YYYY
+\def\vBearbeitungszeitraum{01.10.2022 - 06.01.2023}            %% DD.MM.YYYY - DD.MM.YYYY
 %TODO Datum anpassen
 
 %%%%%%%%%%%%%%%%%%%%%%%%% Eigene Kommandos %%%%%%%%%%%%%%%%%%%%%%%%%
@@ -96,6 +96,12 @@
 \newcommand{\newparagraph}{\newline \newline}
 % Quellenangabe bei Bildern
 \newcommand{\customcaption}[2]{\caption[#1]{ #1. #2.}}
+
+\def\EI{4}
+\def\EO{5}
+\def\EQ{4}
+\def\ILF{7}
+\def\EIF{5}
 
 %%%%%%%%%%%%%%%%%%%% Zitatbibliothek einbinden %%%%%%%%%%%%%%%%%%%%%
 \addbibresource{./literatur/literatur.bib}
@@ -171,9 +177,9 @@
   \include{chapter/Einleitung}
   \include{chapter/GrundwissenUndBegriffe}
   \include{chapter/AnforderungenUndNutzererwartungen}
-  \include{chapter/Aufg-3.tex}
-  \include{chapter/FehlerKostenQualitaetsmaßnahmen.tex}
-
+  \include{chapter/FehlerKostenQualitaetsmaßnahmen}
+  \include{chapter/UmsetzungTests}
+  
   %%%%%%%%%%%%%%%%%%%%%%% Literaturverzeichnis %%%%%%%%%%%%%%%%%%%%%%%
   \include{pages/literaturverzeichnis}
 
