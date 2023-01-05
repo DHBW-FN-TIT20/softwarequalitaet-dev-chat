@@ -39,7 +39,7 @@ Für das Passwort gelten die folgenden Kriterien:
 \noindent
 Die Sicherheit der Passwörter wird durch die Verwendung von Hashwerten gewährleistet.
 Das Passwort liegt somit nicht im Klartext, sondern als Hashwert in der Datenbank ab.
-Während dem Anmeldeprozess wird das eingegebene Klartext Passwort gehasht und mit dem in der Datenbank gespeicherten Hashwert verglichen.
+Während dem Anmeldeprozess wird das eingegebene Klartext-Passwort gehasht und mit dem in der Datenbank gespeicherten Hashwert verglichen.
 Stimmen die Werte überein, wird der Benutzer eingeloggt.
 Wird ein falsches Passwort eingegeben, wird der Benutzer durch das User Interface auf die Fehleingabe hingewiesen.
 \newparagraph
@@ -92,10 +92,10 @@ Für die Moderation und Verwaltung des \gqq{DEV-CHAT} werden die Benutzer in zwe
 Standard-Benutzer sind in der Lage die in den vorherigen beiden Abschnitten beschriebenen Funktionen zu nutzen.
 Administratoren hingegen sind in der Lage weitere Aktionen auszuführen.
 Sie sind in erster Linie zuständig für die Verwaltung der Benutzer und Chat-Räume.
-Dazu bietet \gqq{DEV-CHAT} eine graphische Administrationsoberfläche, welche durch die Rolle \gqq{Admin} freigeschaltet wird.
+Dazu bietet \gqq{DEV-CHAT} eine grafische Administrationsoberfläche, welche durch die Rolle \gqq{Admin} freigeschaltet wird.
 \newparagraph
 Innerhalb dieser Administrationsoberfläche können folgende Aktionen durchgeführt werden:
-Benutzer löschen, Passwörter auf ein Standard Passwort zurücksetzen, Rollen ändern (\gqq{Standard} oder \gqq{Admin}), Chat-Räume mit einem bestimmten Namen erstellen, Chat-Räume löschen, das Ablaufdatum eines Chat-Raums ändern, Umfragen löschen, das Ablaufdatum einer Umfrage ändern, erstellte Tickets einsehen und deren Status ändern (\gqq{To Do} oder \gqq{Done}).
+Benutzer löschen, Passwörter auf ein Standard Passwort zurücksetzen, Rollen ändern (\gqq{Standard} oder \gqq{Admin}), Chat-Räume mit einem bestimmten Namen erstellen, Chat-Räume löschen, das Ablaufdatum eines Chatraums ändern, Umfragen löschen, das Ablaufdatum einer Umfrage ändern, erstellte Tickets einsehen und deren Status ändern (\gqq{To Do} oder \gqq{Done}).
 
 \subsection{Merkmale der Qualität}\label{sec:ProduktUndGebrauchsqualitaet}
 \subsubsection{Funktionalität}
@@ -108,49 +108,49 @@ Benutzer löschen, Passwörter auf ein Standard Passwort zurücksetzen, Rollen �
     \begin{itemize}
       \item Benutzername, Password, Confirm Password eingeben
       \newline 
-      => Müssen die Kriterien erfüllen
+      → Müssen die Kriterien erfüllen
     \end{itemize}
     \item Benutzer löschen
     \newline
-    => Alle zugehörigen Daten (Chat Nachrichten, Umfragen etc.) werden gelöscht
+    → Alle zugehörigen Daten (Chat Nachrichten, Umfragen etc.) werden gelöscht
     \item Benutzer anmelden
     \newline
-    => Benutzername und Passwort eingeben
+    → Benutzername und Passwort eingeben
     \item Benutzer abmelden
     \newline
-    => Benutzer wird ausgeloggt
+    → Benutzer wird ausgeloggt
     \item Benutzer Passwort ändern
     \begin{itemize}
       \item Altes und neues Passwort eingeben
       \newline
-      => Das neue Passwort muss die Kriterien erfüllen
+      → Das neue Passwort muss die Kriterien erfüllen
     \end{itemize}
   \end{itemize}
   \item Schreibfunktion (Chat)
     \begin{itemize}
-      \item Chat-Raum erstellen
+      \item Chatraum erstellen
       \newline
-      => Der Raumname wird aus drei englischen Wörtern zufällig generiert und man wird nach der Erstellung direkt in den Chat weitergeleitet
-      \item Chat-Raum beitreten
+      → Der Raumname wird aus drei englischen Wörtern zufällig generiert und man wird nach der Erstellung direkt in den Chat weitergeleitet
+      \item Chatraum beitreten
       \newline
-      => Beitreten des gewünschten Chat-Raums
+      → Beitreten des gewünschten Chatraums
       \item Nachrichten senden
       \newline
-      => Nachrichten können in den aktuellen Chat-Raum gesendet werden
+      → Nachrichten können in den aktuellen Chatraum gesendet werden
       \item Nachrichten empfangen
       \newline
-      => Alle Benutzer im aktuellen Chat-Raum können Nachrichten synchron empfangen
+      → Alle Benutzer im aktuellen Chatraum können Nachrichten synchron empfangen
       \item Nachrichtenverlauf anzeigen
       \newline
-      => Alle Nachrichten des aktuellen Chat-Raums werden angezeigt
+      → Alle Nachrichten des aktuellen Chatraums werden angezeigt
       \item Kurzbefehle verwenden
       \begin{itemize}
         \item \gqq{/help}
         \newline
-        => Zeigt eine Liste mit allen Kurzbefehlen an
+        → Zeigt eine Liste mit allen Kurzbefehlen an
         \item \gqq{/survey}
         \newline
-        => Erstellt eine Umfrage mit den folgenden Parametern:
+        → Erstellt eine Umfrage mit den folgenden Parametern:
         \begin{itemize}
           \item Titel
           \item Beschreibung
@@ -159,16 +159,16 @@ Benutzer löschen, Passwörter auf ein Standard Passwort zurücksetzen, Rollen �
         \end{itemize}
         \item \gqq{/calc} 
         \newline
-        => Bietet die Möglichkeit, eine einfache Rechnung durchzuführen
+        → Bietet die Möglichkeit, eine einfache Rechnung durchzuführen
         \item \gqq{/whisper} 
         \newline
-        => Sendet eine Nachricht an einen bestimmten Benutzer
+        → Sendet eine Nachricht an einen bestimmten Benutzer
         \item \gqq{/ticket} 
         \newline
-        => Einsenden eines Fehlers
+        → Einsenden eines Fehlers
         \item \gqq{/vote}
         \newline
-        => Abstimmen einer Umfrage mit einer Antwortmöglichkeit mit dem folgenden Parameter:
+        → Abstimmen einer Umfrage mit einer Antwortmöglichkeit mit dem folgenden Parameter:
         \begin{itemize}
           \item UmfrageID
           \item AntwortID
@@ -181,55 +181,55 @@ Benutzer löschen, Passwörter auf ein Standard Passwort zurücksetzen, Rollen �
       \begin{itemize}
         \item Benutzer anzeigen
         \newline
-        => Alle Benutzer werden tabellarisch angezeigt
+        → Alle Benutzer werden tabellarisch angezeigt
         \item Benutzer löschen
         \newline
-        => Alle zugehörigen Daten (Chat Nachrichten, Umfragen, etc.)werden gelöscht
+        → Alle zugehörigen Daten (Chat Nachrichten, Umfragen, etc.)werden gelöscht
         \item Benutzer Passwort zurücksetzen
         \newline
-        => Das Passwort wird auf den Namen des Benutzers zurückgesetzt
+        → Das Passwort wird auf den Namen des Benutzers zurückgesetzt
         \item Benutzer Berechtigungsstatus ändern
         \newline
-        => Der Benutzer erhält die Rolle \gqq{Admin} oder \gqq{Standard}
+        → Der Benutzer erhält die Rolle \gqq{Admin} oder \gqq{Standard}
       \end{itemize}
     \item Chat-Räume verwalten
       \begin{itemize}
         \item Chat-Räume anzeigen
         \newline
-        => Alle Chat-Räume werden tabellarisch angezeigt
-        \item Custom-Chat-Raum erstellen
+        → Alle Chat-Räume werden tabellarisch angezeigt
+        \item Custom-Chatraum erstellen
         \newline
-        => Es kann ein Custom-Chat-Raum mit einem gewünschten Namen erstellt werden
-        \item Custom-Chat-Raum löschen
+        → Es kann ein Custom-Chatraum mit einem gewünschten Namen erstellt werden
+        \item Custom-Chatraum löschen
         \newline
-        => Es können Chat-Räume gelöscht werden
-        \item Ablaufdatum eins Chat-Raums ändern
+        → Es können Chat-Räume gelöscht werden
+        \item Ablaufdatum eines Chatraums ändern
         \newline
-        => Es kann das Ablaufdatum eines Chat-Raums geändert werden
+        → Es kann das Ablaufdatum eines Chatraums geändert werden
       \end{itemize}
     \item Umfragen verwalten
       \begin{itemize}
         \item Umfragen anzeigen
         \newline
-        => Alle Umfragen werden tabellarisch angezeigt
+        → Alle Umfragen werden tabellarisch angezeigt
         \item Umfragen löschen
         \newline
-        => Es können Umfragen gelöscht werden
+        → Es können Umfragen gelöscht werden
         \item Ablaufdatum einer Umfrage ändern
         \newline
-        => Es kann das Ablaufdatum einer Umfrage geändert werden
+        → Es kann das Ablaufdatum einer Umfrage geändert werden
       \end{itemize}
     \item Tickets verwalten
       \begin{itemize}
         \item Tickets anzeigen
         \newline
-        => Alle Tickets werden tabellarisch angezeigt
+        → Alle Tickets werden tabellarisch angezeigt
         \item Tickets löschen
         \newline
-        => Es können Tickets gelöscht werden
+        → Es können Tickets gelöscht werden
         \item Tickets bearbeiten
         \newline
-        => Es kann der Status eines Tickets geändert werden
+        → Es kann der Status eines Tickets geändert werden
       \end{itemize}  
     \end{itemize}   
 \end{itemize}
@@ -241,7 +241,7 @@ Durch die Synchronisation der Chat-Räume bei allen Benutzern, wird die Performa
 \subsubsection{Kompatabilität}\label{sec:Kompatibilitaet}
 Die Web-Applikation \gqq{DEV-CHAT} ist mit allen gängigen Browsern kompatibel.
 Dabei wurden insbesondere die Browser \gqq{Google Chrome}, \gqq{Mozilla Firefox} und \gqq{Microsoft Edge} getestet.
-Durch die Entwicklung des User Interface nach dem Prinzip \gqq{Mobile First} ist die Applikation sowohl für die Nutzung mit mobilen Endgeräten, als auch mit Desktop-Computern optimiert.
+Durch die Entwicklung des User-Interface nach dem Prinzip \gqq{Mobile First} ist die Applikation sowohl für die Nutzung mit mobilen Endgeräten, als auch mit Desktop-Computern optimiert.
 
 \subsubsection{Benutzbarkeit}
 Der Intuitive Name \gqq{DEV-CHAT} indiziert, dass es sich bei der Applikation um ein Chat-System handelt.
@@ -258,9 +258,9 @@ Dadurch ist die Applikation für alle Benutzer geeignet.
 \subsubsection{Zuverlässigkeit}
 % Eine Software muss ein vorher definiertes Leistungsniveau über einen vorher definierten Zeitraum unter bestimmten Bedingungen halten können, um als zuverlässig zu gelten
 Durch die Client Server Architektur der Applikation muss die Zuverlässigkeit sowohl für das Frontend, als auch für das Backend gewährleistet sein.
-Die Zuverlässigkeit des Backend hängt dabei grundsätzlich von drei Faktoren ab: dem Code, der Hardware und den verwendeten externen Systemen.
+Die Zuverlässigkeit des Backends hängt dabei grundsätzlich von drei Faktoren ab: dem Code, der Hardware und den verwendeten externen Systemen.
 Für die Zuverlässigkeit der Hardware sowie der externen Systeme müssen Anbieter und Technologien gewählt werden, die eine hohe Zuverlässigkeit garantieren.
-Im Falle des \gqq{DEV-CHAT} wurde auf die Firma \gqq{Supabase} als Datenbank-Provider zurückgegriffen, welche sich neben einer hohen Zuverlässigkeit vor allem auch durch ihre kostenlosen Angebote auszeichnet.
+Im Falle des \gqq{DEV-CHAT} wurde auf \gqq{Supabase} als Datenbank-Provider zurückgegriffen, welche sich neben einer hohen Zuverlässigkeit vor allem auch durch ihre kostenlosen Angebote auszeichnet.
 Für den Betrieb des Backends wird auf eine eigene Hardware zurückgegriffen.
 Dadurch muss die Zuverlässigkeit durch uns gewährleistet werden.
 Die Zuverlässigkeit des Codes kann beispielsweise durch Unit-Tests und Integrationstests sichergestellt werden.
@@ -276,12 +276,12 @@ Auch hier können für die Zuverlässigkeit des Codes beispielsweise Unit-Tests 
 % SSL
 Um die Sicherheit der Daten und damit der Website zu gewährleisten, werden verschiedene Sicherheitsmaßnahmen umgesetzt.
 Zunächst wird für die Kommunikation zwischen Client und Server das Protokoll \ac{HTTPS} verwendet, wodurch sämtliche Übertragungen mittels dem \ac{SSL}-Verfahren verschlüsselt werden.
-Dies ermöglicht unter Anderem die sichere Übertragung der Klartext Passwörter während des Login-Prozesses.
+Dies ermöglicht unter anderem die sichere Übertragung der Klartext Passwörter während des Login-Prozesses.
 Um die Sicherheit der Passwörter in der Datenbank zu gewährleisten, werden diese wie bereits in Kapitel~\ref{sec:BenutzerAuthentifikation} beschrieben als Hashwert gespeichert.
 \newparagraph
-Um den Zugriff auf Bereiche der Web Applikation für nicht autorisierte Benutzer zu verhindern, wird bei der Erstellung eines neuen Benutzers die Berechtigung \gqq{Standard} zugewiesen.
+Um den Zugriff auf Bereiche der Web-Applikation für nicht autorisierte Benutzer zu verhindern, wird bei der Erstellung eines neuen Benutzers die Berechtigung \gqq{Standard} zugewiesen.
 Für alle Zugriffe auf Funktionen der Applikation, welche nur durch eingeloggte Benutzer ausgeführt werden dürfen, überprüft das Backend des Systems zunächst den Login Status des Benutzers.
-Für den Zugriff auf besondere Bereiche wie etwa der Administrationsoberfläche, wird zusätzlich die Berechtigung des Benutzers geprüft.
+Für den Zugriff auf besondere Bereiche wie etwa der Administrationsoberfläche wird zusätzlich die Berechtigung des Benutzers geprüft.
 \newparagraph
 Erlaubt die Weboberfläche dem Benutzer die Eingabe von Text, welcher anschließend an das Backend übertragen wird, so werden die Eingaben zunächst vom Backend validiert.
 Dadurch können Angriffe wie \ac{SQL}-Injections oder \ac{XSS} verhindert werden.
@@ -290,10 +290,10 @@ Dadurch können Angriffe wie \ac{SQL}-Injections oder \ac{XSS} verhindert werden
 % Modularität durch Klassen
 % Bsp.: Kurzbefehle als Klassen-Struktur -> Erweiterung durch neue Klasse
 % Trennung zwischen Frontend und Backend
-Für die Umsetzung der Web Applikation wurde das Framework Next.js verwendet, welches neben der Entwicklung von UI Komponenten basierend auf React, auch ein Backend mittels Node.js bereitstellt.
+Für die Umsetzung der Web-Applikation wurde das Framework Next.js verwendet, welches neben der Entwicklung von UI Komponenten basierend auf React, auch ein Backend mittels Node.js bereitstellt.
 Dabei wird durch die Projektstruktur eine klare Trennung zwischen Frontend und Backend sichergestellt.
 \newparagraph
-Im Rahmen des \gqq{DEV-CHAT} wurde auf eine Objektorientierte Programmierung mit der Verwendung von klassenbasierten Komponenten gesetzt.
+Im Rahmen des \gqq{DEV-CHAT} wurde auf eine objektorientierte Programmierung mit der Verwendung von klassenbasierten Komponenten gesetzt.
 Dadurch wird eine modulare Struktur der Applikation erreicht.
 Diese sorgt für eine unkomplizierte Erweiterbarkeit der Applikation, welche besonders an dem Beispiel der Kurzbefehle deutlich wird.
 Die Kurzbefehle sind in ihrer Struktur durch eine Oberklasse definiert.
@@ -302,7 +302,7 @@ Abgeleitet von der Oberklasse werden die einzelnen Kurzbefehle implementiert, wo
 Durch die Unterteilung der Applikation in mehrere Module (Klassen) wird außerdem die Testbarkeit der Applikation erleichtert.
 
 \subsubsection{Übertragbarkeit}
-Durch die Verwendung einer Webapplikation ist die Übertragbarkeit der Applikation in einem hohen Umfang gegeben.
+Durch die Verwendung einer Web-Applikation ist die Übertragbarkeit der Applikation in einem hohen Umfang gegeben.
 Dies lässt sich dadurch begründen, dass Webbrowser auf allen gängigen Betriebssystemen zur Verfügung stehen, wodurch eine Betriebssystemunabhängigkeit erreicht wird.
 Gleichzeitig stehen Webbrowser sowohl auf mobilen, als auch auf stationären Endgeräten zur Verfügung.
 Durch die adaptive Entwicklung der Benutzeroberfläche, wie in Kapitel~\ref{sec:Kompatibilitaet} beschreiben, lässt sich die Anwendung somit auf allen gängigen Endgeräten ohne Einschränkungen der Benutzerfreundlichkeit nutzen.
@@ -314,14 +314,13 @@ Diese Kategorien werden in den folgenden Unterkapiteln näher erläutert.
 \subsubsection{Verborgene Erwartungen}
 Verborgene Erwartungen sind unbewusst und entstehen durch die Erfahrungen, die der Nutzer mit anderen Produkten gemacht hat.
 Dazu zählen zum Beispiel bestimmte Interaktionsmuster, Navigationsarten, Layouts und Designs.
-Beispielsweise wird bei den meisten Desktop Applikationen erwartet, dass diese üblicherweise an der oberen rechten Seite mit einem Button geschlossen werden können.
-Ein weiteres Beispiel, welches ebenfalls im Kontext \gqq{DEV-CHAT} relevant ist, ist die Unabhängigkeit der Applikation von dem Betriebssystem, beziehungsweise der Art der zugrundeliegenden Hardware.
+Beispielsweise wird bei den meisten Desktop-Applikationen erwartet, dass diese üblicherweise an der oberen rechten Seite mit einem Button geschlossen werden können.Ein weiteres Beispiel, welches ebenfalls im Kontext \gqq{DEV-CHAT} relevant ist, ist die Unabhängigkeit der Applikation von dem Betriebssystem, beziehungsweise der Art der zugrundeliegenden Hardware.
 
 \subsubsection{Prägende Erwartungen}
 Prägende Erwartungen ergeben sich aus der Erfahrungen mit der Benutzung bestimmter Applikationen.
 Bestimmte Interaktionsmuster oder auch Designentscheidungen werden durch eine regelmäßige Benutzung verinnerlicht und als intuitiv empfunden.
 Ein Beispiel hierfür ist Social Media.
-Die meisten Nutzer sind mit der Benutzung von Social Media Plattformen vertraut und kennen den Sinn und Zweck der enthaltenen Interaktionselemente.
+Die meisten Nutzer sind mit der Benutzung von Social-Media-Plattformen vertraut und kennen den Sinn und Zweck der enthaltenen Interaktionselemente.
 Bei der Entwicklung einer neuen Anwendung, wird somit erwartet, dass diese Elemente ebenfalls vorhanden sind.
 
 \subsubsection{Aktuelle Erwartungen}
@@ -358,7 +357,7 @@ Auch Anforderungen an die Geschwindigkeit der Applikation sind für den Nutzer n
 % Chatapplikation ohne großartige Zusatzfunktionen
 \begin{itemize}
   \item Die Applikation ist möglichst ähnlich zu bekannten Chat Applikationen aufgebaut (Prägende Erwartungen)
-  \item Die Applikation bietet ausschließlich die Chat Funktion (Aktuelle Erwartungen)
+  \item Die Applikation bietet ausschließlich die Chat-Funktion (Aktuelle Erwartungen)
   \item Es gibt eine detaillierte/geführte Anleitung zur Nutzung der Applikation (Verborgene Erwartungen)
 \end{itemize}
 
@@ -377,12 +376,12 @@ Im Gegensatz zu dem technisch wenig versierten Nutzer, kann der technisch versie
 Aus diesem Grund erwartet er eine einfache, intuitive Bedienung der Applikation, wobei besonders die Reaktionsgeschwindigkeit einen hohen Stellenwert einnimmt.
 Zusätzlich erwartet er die für Chat Applikationen üblichen Funktionen, wie die Unterteilung in verschiedene Chat-Räume und die Echtzeitkommunikation zwischen den Nutzern.
 \newparagraph
-Durch den Konsolen-Style des Chat-Raums erwartet der Nutzer ebenfalls die Möglichkeit, Befehle zu verwenden.
+Durch den Konsolen-Style des Chatraums erwartet der Nutzer ebenfalls die Möglichkeit, Befehle zu verwenden.
 Der Befehl \gqq{/help} ist dabei ein weit verbreiteter Befehl um eine Liste aller verfügbaren Befehle anzuzeigen.
 \newparagraph
-Erhält der Nutzer die \gqq{Admin} Rolle, so macht er sich zunächst mit der Administrationsoberfläche vertraut.
+Erhält der Nutzer die \gqq{Admin}-Rolle, so macht er sich zunächst mit der Administrationsoberfläche vertraut.
 Da er sich bereits mit der Applikation auseinandergesetzt hat, weiß er wie er mit den bereitgestellten Funktionen umgehen muss.
-Erhält er ungewollt die Rolle \gqq{Admin} kann der technisch versierte Nutzer entweder verantwortungsvoll mit der Rolle umgehen oder gar zu einer noch größeren Gefahr als der technisch weniger versierte Nutzer werden.
+Erhält er ungewollt die Rolle \gqq{Admin}, kann der technisch versierte Nutzer entweder verantwortungsvoll mit der Rolle umgehen oder gar zu einer noch größeren Gefahr als der technisch weniger versierte Nutzer werden.
 Durch sein erweitertes Wissen über den Umgang mit der Applikation kann er gezielt Schaden anrichten, weshalb eine ungewollte Vergabe der Rolle ebenfalls zu vermeiden ist.
 
 \subsubsection{Nutzererwartungen}
@@ -390,8 +389,8 @@ Durch sein erweitertes Wissen über den Umgang mit der Applikation kann er gezie
   \item Aufbau und Features sind ähnlich zu bekannten Chat Applikationen (Prägende Erwartungen)
   \item Durch den Konsolen-Style gibt es Befehle, die verwendet werden können (Prägende Erwartungen)
   \item Die Eingabe und Verarbeitung von Daten erfolgt ohne große Verzögerung (Verborgene Erwartungen)
-  \item Es gibt eine Administrator Rolle welche befugt ist, die Funktionen der Applikation zu verwalten (Verborgene Erwartungen)
-  \item Die Chat Nachrichten werden mit Ende zu Ende Verschlüsselung übertragen (Verborgene Erwartungen)
+  \item Es gibt eine Administrator-Rolle welche befugt ist, die Funktionen der Applikation zu verwalten (Verborgene Erwartungen)
+  \item Die Chat Nachrichten werden mit Ende-zu-Ende-Verschlüsselung übertragen (Verborgene Erwartungen)
   \item Das Design der Applikation soll einem technisch versierten Nutzer bekannt vorkommen (Aktuelle Erwartungen)
 \end{itemize}
 

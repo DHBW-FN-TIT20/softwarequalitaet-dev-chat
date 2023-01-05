@@ -3,9 +3,9 @@
 % kurze Einleitung zum Thema
 In diesem Kapitel wird auf die Fehler, Kosten und Qualitätsmaßnahmen eingegangen.
 Hierzu werden typische Faults und Defects des Produkts beschrieben.
-Diese werden durch Fehlerschwere, Priorität und potentielle Fehlerkosten klassifiziert. 
+Diese werden durch Fehlerschwere, Priorität und potenzielle Fehlerkosten klassifiziert. 
 Anschließend werden mehrere Methoden dargestellt, wie die Qualitätskosten in der Entwicklung gesenkt werden können.
-Außerdem wird erörtert warum es nicht sinnvoll ist eine vollständige Fehlersicherheit anzustreben.
+Außerdem wird erörtert, warum es nicht sinnvoll ist eine vollständige Fehlersicherheit anzustreben.
 Abschließend wird für das Produkt eine \ac{FMEA} durchgeführt.
 
 \subsection{Faults und Defects}
@@ -64,10 +64,10 @@ Diese wird in drei Kategorien aufgeteilt und ebenfalls in der nachfolgenden Aufl
 
 
 \subsection{Qualitätskostensenkung und Fehlertoleranz}
-Um Qualitätsbezogene Kosten zu reduzieren muss zunächst die Zusammensetzung dieser dargestellt werden.
+Um Qualitätsbezogene Kosten zu reduzieren, muss zunächst die Zusammensetzung dieser dargestellt werden.
 Qualitätskosten setzen sich aus den drei Bereichen Fehlerkosten, Fehlerverhütungskosten und Prüfkosten zusammen.
 Fehlerkosten sind Kosten, die nach der Auslieferung des Produkts entstehen, wie z.B. Kosten für Reklamationen oder Vertragsstrafen.
-Fehlerverhütungskosten sind Kosten die primär im Bereich des Qualitätsmanagement anfallen.
+Fehlerverhütungskosten sind Kosten die primär im Bereich des Qualitätsmanagements anfallen.
 Prüfkosten entstehen in der Entwicklung bzw. Produktion, um das Produkt vor der Auslieferung zu Testen.
 Die Fehlerverhütungskosten und Prüfkosten können zusammengefasst werden, da diese während der Entwicklung entstehen, die Fehlerkosten hingegen entstehen nach der Auslieferung des Produkts.
 \newparagraph
@@ -95,7 +95,7 @@ Diese ist in Abbildung \ref{fig:boehm} dargestellt.
 Die Kostendynamik bei einem Entwicklungsprozess verhält sich exponentiell.
 Software wird in den klassischen Vorgehensmodellen innerhalb eines Projekts in den sechs Phasen Analyse, Entwurf, Implementierung, Test, Inbetriebnahme und Wartung entwickelt.
 Das Ziel ist, dass bereits in der Analyse alle Anforderungen an die zu entwickelnde Software identifiziert werden.
-Änderungen die nach dem Entwurf der Software entstehen können meist nur mit hohem Kostenaufwand berücksichtigt werden.
+Änderungen, die nach dem Entwurf der Software entstehen, können meist nur mit hohem Kostenaufwand berücksichtigt werden.
 \autocite[vgl.][S. 95]{witte_testmanagement_2019}
 \begin{figure}[H]
     \centering
@@ -104,15 +104,15 @@ Das Ziel ist, dass bereits in der Analyse alle Anforderungen an die zu entwickel
     \label{fig:boehm}
 \end{figure}\noindent
 Die Verbesserung des Entwicklungsprozesses erfolgt im Rahmen eines \ac{KVP}.
-Hierbei kann die PDCA Methode verwendet werden.
+Hierbei kann die PDCA-Methode verwendet werden.
 Diese setzt sich aus den Phasen \textbf{P}lan, \textbf{D}o, \textbf{A}ct und \textbf{C}heck zusammen, welche nachfolgend beschrieben werden.
 \begin{quote}
     \textbf{Plan}: Analyse der aktuellen Situation und gewünschten Situation, Identifikation der Verbesserungspotentiale, Maßnahmen entwickeln zur Erreichung des Zielzustands.\\
     \textbf{Do}: Durchführug der geplanten Maßnahmen.\\
     \textbf{Check}: Vergleich Sollzustand und Istzustand.\\
-    \textbf{Act}: Abhängig ob die Maßnahmen erfolgreich sind werden diese als Standard definiert oder der Prozess wird erneut durchlaufen.
+    \textbf{Act}: Abhängig davon, ob die Maßnahmen erfolgreich sind, werden diese als Standard definiert oder der Prozess wird erneut durchlaufen.
 \end{quote}
-Da DEV-CHAT einmalig in der Vorlesung Software Engineering entwickelt wurde, wird es einen weiteren Entwicklungsprozess mit dieser Teamkonstellation nicht geben, weshalb eine Prozessoptimierung nur theoretisch durchgeführt werden kann.
+Da DEV-CHAT einmalig in der Vorlesung Software-Engineering entwickelt wurde, wird es einen weiteren Entwicklungsprozess mit dieser Teamkonstellation nicht geben, weshalb eine Prozessoptimierung nur theoretisch durchgeführt werden kann.
 Die Probleme und die zugeordneten Maßnahmen der Plan Phase werden in Tabelle~\ref{tab:pdca} dargestellt.
 \begin{table}[H]
   \centering
@@ -151,7 +151,7 @@ Die Probleme und die zugeordneten Maßnahmen der Plan Phase werden in Tabelle~\r
   \label{tab:pdca}
 \end{table}\noindent
 In weiteren Schritten müssten diese Maßnahmen nun durchgeführt und evaluiert werden.
-Alternativ zu der PDCA Analyse kann auch \ac{CMMI} verwendet werden, auf welches in dieser Arbeit nicht tiefer eingegangen wird.
+Alternativ zu der PDCA-Analyse kann auch \ac{CMMI} verwendet werden, auf welches in dieser Arbeit nicht tiefer eingegangen wird.
 \newparagraph
 Bei der Produktverbesserung wird die Qualität des tatsächlichen Produkts verbessert.
 Da DEV-CHAT nur im Rahmen der Vorlesung entwickelt wurde und nicht veröffentlicht wird, ist eine Qualitätsoptimierung auch nur theoretisch durchführbar. 
